@@ -5,9 +5,9 @@ export const menu = [
         {id:4, label: 'Giá trị cốt lõi', link: '/'},
         {id:5, label: 'Lịch sử hình thành', link: '/'},
     ]},
-    {id:6,label:'Sự kiện', link: '/'},
-    {id:7,label:'Tin tức', link: '/'},
+    {id:6,label:'Sự kiện', link: '/su-kien'},
+    {id:7,label:'Tin tức', link: '/tin-tuc'},
     {id:8,label:'Case Study', link: '/'},
-    {id:9,label:'Tuyển dụng', link: '/'},
-    {id:10,label:'Liên hệ', link: '/'},
+    {id:9,label:'Tuyển dụng', link: '/tuyen-dung'},
+    {id:10,label:'Liên hệ', link: '/lien-he'},
 ]

@@ -46,6 +46,7 @@ export default function NavbarItem({item}){
                 open={open} 
                 anchorEl={anchorEl} 
                 transition 
+                sx={{zIndex: 999}}
             >
                 {({ TransitionProps }) => (
                 <Fade {...TransitionProps} timeout={350}>

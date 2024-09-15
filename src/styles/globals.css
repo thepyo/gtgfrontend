@@ -13,7 +13,6 @@
 html,
 body {
   max-width: 100vw;
-  overflow-x: hidden;
 }
 
 body {
@@ -28,6 +27,7 @@ body {
   box-sizing: border-box;
   padding: 0;
   margin: 0;
+  scroll-behavior: smooth;
 }
 
 a {
@@ -47,5 +47,199 @@ a {
 }
 
 .navbar-item:hover{
-  color: #1DB5BE
+  color: rgb(29, 181, 190)
+}
+
+
+.button-play-animation {
+  display: inline-block;
+  position: relative;
+}
+.button-play-animation.is-play {
+  background-color: #fff;
+  border-radius: 50%;
+  width: 80px;
+  height: 80px;
+}
+.button-play-animation.is-play .button-outer-circle {
+  background: rgb(29, 181, 190, 0.3);
+  border-radius: 50%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 100%;
+  width: 100%;
+}
+.button-play-animation.is-play .button-icon {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 30px;
+  height: 30px;
+  transform: translate(-50%, -50%);
+}
+.button-play-animation.is-play .button-icon .triangle {
+  -webkit-animation: fadeIn 3s ease;
+          animation: fadeIn 3s ease;
+}
+.button-play-animation.is-play .button-icon .path {
+  stroke-dasharray: 90;
+  stroke-dashoffset: 0;
+  -webkit-animation: triangleStroke 2s;
+          animation: triangleStroke 2s;
+  -webkit-animation-timing-function: ease;
+          animation-timing-function: ease;
+}
+.has-scale-animation {
+  -webkit-animation: smallScale 2s infinite;
+          animation: smallScale 2s infinite;
+}
+.has-delay-short {
+  -webkit-animation-delay: 0.5s;
+          animation-delay: 0.5s;
+}
+@-webkit-keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@-webkit-keyframes triangleStroke {
+  from {
+    stroke-dashoffset: 90;
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+@keyframes triangleStroke {
+  from {
+    stroke-dashoffset: 90;
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+@-webkit-keyframes smallScale {
+  from {
+    transform: scale(1);
+    opacity: 1;
+  }
+  to {
+    transform: scale(1.5);
+    opacity: 0;
+  }
+}
+@keyframes smallScale {
+  from {
+    transform: scale(1);
+    opacity: 1;
+  }
+  to {
+    transform: scale(1.5);
+    opacity: 0;
+  }
+}
+
+/* image animation hover */
+
+/* Zoom In #1 */
+.hover-img figure img {
+	-webkit-transform: scale(1);
+	transform: scale(1);
+	-webkit-transition: .3s ease-in-out;
+	transition: .3s ease-in-out;
+}
+.hover-img figure:hover img {
+	-webkit-transform: scale(1.03);
+	transform: scale(1.03);
+}
+
+.description-content ul{
+  padding-left: 12px;
+}
+
+.description-content ul li{
+  padding: 5px 0
+}
+
+.post-content
+{
+  color: #000;
+  line-height: 1.5;
+  text-align: justify;
+}
+.post-content p,
+.post-content li{
+  padding: 5px 0;
+  font-weight: 300;
+}
+
+.post-content h2,
+.post-content h3,
+.post-content h4,
+.post-content h5{
+  padding: 10px 0
+}
+
+.post-content img{
+  max-width: 100%;
+  height: auto;
+  margin: 10px 0;
+}
+.post-content ul,
+.post-content ol{
+  padding-left: 25px;
+}
+
+.post-content h2{
+  font-size: 20px;
+}
+
+.post-content h3{
+  font-size: 18px;
+}
+
+.post-content h4,
+.post-content h5{
+  font-size: 17px;
+}
+
+.scale-pattern{
+  -webkit-animation: bgScale 1s infinite;
+  animation: bgScale 1s infinite;
+}
+
+@-webkit-keyframes bgScale {
+  from {
+    transform: scale(1);
+    opacity: 1;
+  }
+  to {
+    transform: scale(1.5);
+    opacity: 0;
+  }
+}
+
+@keyframes bgScale {
+  from {
+    transform: scale(1);
+    opacity: 1;
+  }
+  to {
+    transform: scale(1.5);
+    opacity: 0;
+  }
 }

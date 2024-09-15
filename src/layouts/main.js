@@ -6,7 +6,7 @@ export default function MainLayout({children}){
     return(
         <Stack direction={"column"} minHeight={'100vh'}>
             <Header />
-            <Box component={"main"} flexGrow={1}>
+            <Box component={"main"} flexGrow={1} bgcolor={"#fff"}>
                 {children}
             </Box>
             <Footer />

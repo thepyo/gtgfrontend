@@ -14,7 +14,7 @@ export default function Footer(){
             direction={"column"} 
             spacing={4} 
             bgcolor={"#fff"} 
-            minHeight={"540px"}
+            minHeight={"500px"}
             justifyContent={"center"}
             alignItems={"center"}
             py={{
@@ -23,6 +23,7 @@ export default function Footer(){
             }}
         >
             <Container maxWidth={gtgConfig.maxWidth}>
+                <Divider light sx={{my: 5}}/>
                 <Grid2 container spacing={{xs:2, lg: 8}}>
                     <Grid2 size={{xs: 12, lg: 3}}>
                         <Widget1 />
