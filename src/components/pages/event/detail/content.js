@@ -9,7 +9,10 @@ export default function EventDetailContent(){
                 fontSize={24}
                 fontWeight={700}
                 color="primary.main"
-                textAlign={"center"}
+                textAlign={{
+                    xs: 'justify',
+                    lg: "center"
+                }}
                 lineHeight={"38px"}
             >
                 Chia sẻ về xu hướng làm đẹp mới nhất và tư vấn các giải pháp thẩm mỹ phù hợp cho từng đối tượng khách hàng

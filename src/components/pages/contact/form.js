@@ -8,16 +8,16 @@ export default function ContactForm(){
             width={{xs: '100%',lg: '685px'}}
             bgcolor={theme.palette.primary.main}
             minHeight={"400px"}
-            p={4}
+            p={{xs:2, lg: 4}}
             spacing={3}
         >
             <Typography 
                 variant="h1" 
                 component={"h1"} 
-                fontSize={"36px"} 
+                fontSize={{xs:26, lg: 36}} 
                 fontWeight={600} 
-                lineHeight={"45px"} 
-                letterSpacing={"-2.5%"}
+                lineHeight={1.3} 
+                letterSpacing={"-1px"}
                 color="#fff"
                 textAlign={"center"}
             >

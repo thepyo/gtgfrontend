@@ -10,10 +10,13 @@ export default function CallToActionAboutUs(){
             <Container maxWidth={gtgConfig.maxWidth}>
                 <Stack maxWidth={"888px"} spacing={3}>
                     <Typography
-                        fontSize={72}
+                        fontSize={{
+                            xs: 40,
+                            lg: 72
+                        }}
                         fontWeight={600}
-                        lineHeight={"90px"}
-                        letterSpacing={"-3%"}
+                        lineHeight={1.3}
+                        letterSpacing={"-1px"}
                         color="neutral.cl900"
                     >
                         Thẩm Mỹ Viện GTG - đối tác làm đẹp, nâng cao sự tự tin và sức khỏe cho cộng đồng

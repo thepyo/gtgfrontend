@@ -1,5 +1,5 @@
 import { gtgConfig } from "@/config/global";
-import { Box, Container, Stack, Typography } from "@mui/material";
+import { Box, Container, Divider, Grid2, Stack, Typography } from "@mui/material";
 
 export default function Section2(){
     return(
@@ -7,7 +7,10 @@ export default function Section2(){
             direction={"column"}
             justifyContent={"center"}
             alignItems={"center"}
-            py={5}
+            py={{
+                xs:0,
+                lg: 5
+            }}
         >
             <Container maxWidth={gtgConfig.maxWidth}>
                 <Stack 
@@ -42,6 +45,160 @@ export default function Section2(){
                     </Typography>
                 </Stack>
             </Container>
+
+            <Box minHeight={{xs: 'unset', lg: 500}} mt={6} position={"relative"} width={"100vw"}>
+                <Container maxWidth={"xl"}>
+                    <Grid2 container spacing={5}>
+                        <Grid2 size={{xs: 12, lg: 3}}>
+                            <Stack direction={"column"} spacing={2} position={"relative"} top={{xs: 0, lg: "80%"}}>
+                                <Box display={{xs: 'none', lg: 'block'}}>
+                                    <svg width="48" height="81" viewBox="0 0 48 81" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <circle cx="24" cy="24" r="24" fill="#00AEEF" fillOpacity="0.2"/>
+                                        <circle cx="24" cy="24" r="19.4717" fill="#00AEEF" fillOpacity="0.4"/>
+                                        <circle cx="23.9999" cy="24.0001" r="12.2264" fill="#00AEEF"/>
+                                        <line x1="24.5" y1="48" x2="24.5" y2="81" stroke="#A5D7E8"/>
+                                    </svg>
+                                </Box>
+
+                                <Typography
+                                    variant="h3" 
+                                    component={"h3"}
+                                    fontSize={30}
+                                    fontWeight={600}
+                                    color="neutral.cl900"
+                                >
+                                    Chế độ đãi ngộ
+                                </Typography>
+
+                                <Typography
+                                    variant="body1"
+                                    fontWeight={400}
+                                    fontSize={18}
+                                    color="neutral.cl500"
+                                    textAlign={"justify"}
+                                    maxWidth={{xs: '100%', lg: 275}}
+                                >
+                                    Công ty thẩm mỹ viện chúng tôi cung cấp chế độ đãi ngộ hấp dẫn, bao gồm lương cạnh tranh, thưởng hiệu quả, và phúc lợi toàn diện.
+                                </Typography>
+
+                            </Stack>
+                        </Grid2>
+                        <Grid2 size={{xs: 12, lg: 3}}>
+                            <Stack direction={"column"} spacing={2} position={"relative"} top={{xs: 0, lg: "16%"}}>
+                                <Typography 
+                                    variant="h3" 
+                                    component={"h3"}
+                                    fontSize={30}
+                                    fontWeight={600}
+                                    color="neutral.cl900"
+                                >
+                                    Nhiều cơ hội
+                                </Typography>
+
+                                <Typography
+                                    variant="body1"
+                                    fontWeight={400}
+                                    fontSize={18}
+                                    color="neutral.cl500"
+                                    textAlign={"justify"}
+                                    maxWidth={{xs: '100%', lg: 275}}
+                                >
+                                    Làm việc tại công ty thẩm mỹ viện, bạn sẽ có cơ hội phát triển và thăng tiến nhanh chóng.
+                                </Typography>
+                                <Box display={{xs: 'none', lg: 'block'}}>
+                                    <svg width="48" height="81" viewBox="0 0 48 81" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <circle cx="24" cy="57" r="24" fill="#00AEEF" fillOpacity="0.2"/>
+                                    <circle cx="23.999" cy="57" r="19.4717" fill="#00AEEF" fillOpacity="0.4"/>
+                                    <circle cx="23.9999" cy="57.0001" r="12.2264" fill="#00AEEF"/>
+                                    <line x1="24.5" y1="2.18557e-08" x2="24.5" y2="33" stroke="#A5D7E8"/>
+                                    </svg>
+                                </Box>
+
+                            </Stack>
+                        </Grid2>
+                        <Grid2 size={{xs: 12, lg: 3}}>
+                            <Stack direction={"column"} spacing={2} position={"relative"} top={{xs: 0, lg: "80%"}}>
+                                <Box display={{xs: 'none', lg: 'block'}}>
+                                    <svg width="48" height="81" viewBox="0 0 48 81" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <circle cx="24" cy="24" r="24" fill="#00AEEF" fillOpacity="0.2"/>
+                                        <circle cx="24" cy="24" r="19.4717" fill="#00AEEF" fillOpacity="0.4"/>
+                                        <circle cx="23.9999" cy="24.0001" r="12.2264" fill="#00AEEF"/>
+                                        <line x1="24.5" y1="48" x2="24.5" y2="81" stroke="#A5D7E8"/>
+                                    </svg>
+                                </Box>
+
+                                <Typography 
+                                    variant="h3" 
+                                    component={"h3"}
+                                    fontSize={30}
+                                    fontWeight={600}
+                                    color="neutral.cl900"
+                                >
+                                    Nơi làm việc
+                                </Typography>
+
+                                <Typography
+                                    variant="body1"
+                                    fontWeight={400}
+                                    fontSize={18}
+                                    color="neutral.cl500"
+                                    textAlign={"justify"}
+                                    maxWidth={{xs: '100%', lg: 275}}
+                                >
+                                    Công ty thẩm mỹ viện có môi trường làm việc hiện đại, chuyên nghiệp và thân thiện.
+                                </Typography>
+                            </Stack>
+                        </Grid2>
+                        <Grid2 size={{xs: 12, lg: 3}}>
+                            <Stack direction={"column"} spacing={2} position={"relative"} top={{xs:0, lg:"16%"}}>
+                                <Typography 
+                                    variant="h3" 
+                                    component={"h3"}
+                                    fontSize={30}
+                                    fontWeight={600}
+                                    color="neutral.cl900"
+                                >
+                                    Nhân sự trẻ
+                                </Typography>
+
+                                <Typography
+                                    variant="body1"
+                                    fontWeight={400}
+                                    fontSize={18}
+                                    color="neutral.cl500"
+                                    textAlign={"justify"}
+                                    maxWidth={{xs: '100%', lg: 275}}
+                                >
+                                    Làm việc tại công ty thẩm mỹ viện, bạn sẽ có cơ hội phát triển và thăng tiến nhanh chóng.
+                                </Typography>
+                                <Box display={{xs: 'none', lg: 'block'}}>
+                                <svg width="48" height="81" viewBox="0 0 48 81" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <circle cx="24" cy="57" r="24" fill="#00AEEF" fillOpacity="0.2"/>
+                                <circle cx="23.999" cy="57" r="19.4717" fill="#00AEEF" fillOpacity="0.4"/>
+                                <circle cx="23.9999" cy="57.0001" r="12.2264" fill="#00AEEF"/>
+                                <line x1="24.5" y1="2.18557e-08" x2="24.5" y2="33" stroke="#A5D7E8"/>
+                                </svg>
+                                </Box>
+
+                            </Stack>
+                        </Grid2>
+                    </Grid2>
+                </Container>
+
+                <Stack
+                    position={"absolute"}
+                    top={'50%'}
+                    left={0}
+                    right={0}
+                    bottom={0}
+                    width={"100vw"}
+                    height={"100%"}
+                    zIndex={0}
+                    display={{xs: 'none', lg: 'flex'}}
+                >
+                    <Divider light sx={{height: "3px", width: '100vw'}}/>
+                </Stack>
+            </Box>
         </Stack>
     )
 }

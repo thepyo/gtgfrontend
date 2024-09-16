@@ -19,7 +19,7 @@ export default function NewItem() {
                                     alt="news"
                                     style={{
                                         width: '100%',
-                                        height: '250px',
+                                        height: '220px',
                                         objectFit: 'cover',
                                         objectPosition: 'center',
                                         borderBottom: `4px solid ${theme.palette.primary.main}`

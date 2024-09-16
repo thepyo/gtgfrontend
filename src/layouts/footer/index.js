@@ -23,7 +23,7 @@ export default function Footer(){
             }}
         >
             <Container maxWidth={gtgConfig.maxWidth}>
-                <Divider light sx={{my: 5}}/>
+                <Divider light sx={{my: {xs:2, lg: 5}}}/>
                 <Grid2 container spacing={{xs:2, lg: 8}}>
                     <Grid2 size={{xs: 12, lg: 3}}>
                         <Widget1 />

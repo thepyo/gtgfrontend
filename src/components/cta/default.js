@@ -15,9 +15,21 @@ export default function CallToActionDefault(){
                 xs: 3,
                 lg: 30
             }}
-            pt={5}
+            pt={{
+                xs:3,
+                lg:5
+            }}
         >
-            <Typography variant="h2" component={"h2"} fontSize={60} fontWeight={600} color="neutral.cl900">
+            <Typography
+                variant="h2"
+                component={"h2"}
+                fontSize={{
+                    xs:40,
+                    lg:60
+                }}
+                fontWeight={600}
+                color="neutral.cl900"
+            >
                 Biến giấc mơ làm đẹp của bạn thành hiện thực
             </Typography>
             <Box display={{xs:'none', lg: 'block'}}><IconArrowRight size={80} color={theme.palette.neutral.cl900}/></Box>

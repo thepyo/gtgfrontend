@@ -8,13 +8,16 @@ export default function AboutUsSection1(){
         <Box position={"relative"} pt={{xs: 4, lg: 8}} sx={{overflow: 'hidden'}}>
             <Box position={"relative"} sx={{zIndex: 1}}>
                 <Container maxWidth={gtgConfig.maxWidth}>
-                    <Box maxWidth={800} py={10}>
+                    <Box maxWidth={800} py={{xs:3, lg: 10}}>
                         <Typography
                             variant="h2"
                             component={"h2"}
-                            fontSize={72}
+                            fontSize={{
+                                xs:48,
+                                lg: 72
+                            }}
                             fontWeight={600}
-                            lineHeight={"90px"}
+                            lineHeight={1.3}
                             letterSpacing={"-1.8px"}
                             color="neutral.cl900"
                         >
@@ -33,13 +36,13 @@ export default function AboutUsSection1(){
                 }} 
             >
                 <Container maxWidth={gtgConfig.maxWidth}>
-                    <Box maxWidth={626} py={10}>
+                    <Box maxWidth={626} py={{xs:3, lg:10}}>
                         <Typography
                             variant="h2"
                             component={"h2"}
-                            fontSize={30}
+                            fontSize={{xs:24, lg: 30}}
                             fontWeight={600}
-                            lineHeight={"40px"}
+                            lineHeight={1.3}
                             color="neutral.cl900"
                         >
                             Đối với Thẩm Mỹ Viện GTG, mỗi dịch vụ không chỉ là cơ hội đem lại vẻ đẹp cho khách hàng mà còn là cách chúng tôi cùng đồng hành với khách hàng, mang lại giá trị tự tin và hạnh phúc thông qua từng liệu trình làm đẹp.
@@ -47,7 +50,7 @@ export default function AboutUsSection1(){
                     </Box>
                     <Grid2 container spacing={3}>
                         <Grid2 size={{xs: 12, lg: 4}}>
-                            <Stack direction={"column"} spacing={2}  justifyContent={"center"} minHeight={360}>
+                            <Stack direction={"column"} spacing={2}  justifyContent={"center"} minHeight={{xs: 'unset', lg: 360}}>
                                 <Stack direction={"row"} justifyContent={"flex-start"} alignItems={"center"} spacing={1} zIndex={1}>
                                     <Divider light sx={{ bgcolor: theme.palette.primary.main, width: 31, height: 1 }} />
                                     <Typography variant="body2" fontSize={16} fontWeight={400} color="primary.main">
@@ -56,9 +59,9 @@ export default function AboutUsSection1(){
                                 </Stack>
 
                                 <Typography
-                                    fontSize={24}
+                                    fontSize={{xs:20, lg: 24}}
                                     fontWeight={400}
-                                    lineHeight={"32px"}
+                                    lineHeight={1.5}
                                     color="neutral.cl900"
                                     textAlign={"justify"}
                                 >

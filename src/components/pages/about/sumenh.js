@@ -10,7 +10,7 @@ export default function MissionSection() {
             <Container maxWidth={gtgConfig.maxWidth}>
                 <Grid2 container spacing={8}>
 
-                    <Grid2 size={{ xs: 12, lg: 6 }}>
+                    <Grid2 size={{ xs: 12, lg: 6 }} display={{xs:'none', lg: 'block'}}>
                         <Box width={"100%"} height={"100%"} bgcolor={"#D9D9D9"} />
                     </Grid2>
 
@@ -41,7 +41,7 @@ export default function MissionSection() {
                             </Box>
 
                             <Box>
-                                <Button variant="contained" endIcon={<IconArrowRight color="#fff" size={19}/>} sx={{px: 5, py: 1.5}}>
+                                <Button variant="contained" endIcon={<IconArrowRight color="#fff" size={19}/>} sx={{px: 5, py: 2}}>
                                     <Typography color="#fff">Xem thêm</Typography>
                                 </Button>
                             </Box>

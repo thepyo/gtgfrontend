@@ -1,11 +1,13 @@
 import { gtgConfig } from "@/config/global";
-import { Box, Button, Container, Dialog, Grid2, Stack, Typography } from "@mui/material";
+import { Box, Button, Container, Dialog, Grid2, Stack, Typography, useMediaQuery } from "@mui/material";
 import Image from "next/image";
 import { useState } from "react";
 
 export default function Section1() {
 
     const [open, setOpen] = useState(false);
+
+    const matches = useMediaQuery('(max-width:720px)');
 
     return (
         <Stack
@@ -35,7 +37,7 @@ export default function Section1() {
                                     position: 'relative',
                                     width: '100%',
                                     height: 'auto',
-                                    borderTopRightRadius: '200px'
+                                    borderTopRightRadius: matches ? 0 : "200px"
                                 }}
                             />
                             <Stack

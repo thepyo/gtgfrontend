@@ -5,9 +5,9 @@ import Link from "next/link";
 
 export default function EventItem(){
     return(
-        <Stack direction={"column"} spacing={2} mt={5}>
+        <Stack direction={"column"} spacing={2} mt={{xs:2, lg: 5}}>
             <Typography
-                fontSize={36}
+                fontSize={{xs: 26, lg: 36}}
                 fontWeight={600}
                 lineHeight={"45px"}
                 color="neutral.cl900"
@@ -16,9 +16,9 @@ export default function EventItem(){
                 11.06.2024
             </Typography>
             <Typography
-                fontSize={18}
+                fontSize={{xs:16, lg: 18}}
                 fontWeight={400}
-                lineHeight={"28px"}
+                lineHeight={1.5}
                 color="neutral.cl500"
             >
                 Chia sẻ về xu hướng làm đẹp mới nhất và tư vấn các giải pháp thẩm mỹ phù hợp cho từng đối tượng khách hàng

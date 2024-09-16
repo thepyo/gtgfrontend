@@ -61,7 +61,7 @@ export default function Navbar(){
                         <Stack spacing={2} divider={<Divider light />}>
                             {menu?.map((item,key) =>
                                 <Stack 
-                                    onClick={() => handleClick(item?.attributes?.url)} 
+                                    onClick={() => handleClick(item?.link)} 
                                     key={key} 
                                     justifyContent={"space-between"}
                                     alignItems={"center"}

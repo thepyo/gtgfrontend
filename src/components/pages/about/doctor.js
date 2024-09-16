@@ -1,18 +1,23 @@
-import { Box, Stack, Typography } from "@mui/material";
+import { Box, Stack, Typography, useMediaQuery } from "@mui/material";
 import Image from "next/image";
 
 export default function DoctorItem(){
+
+    const matches = useMediaQuery('(max-width:700px)');
+
+    if(!matches) return
+
     return(
-        <Stack direction={"column"} justifyContent={"center"} alignItems={"center"} spacing={2} mt={5}>
+        <Stack direction={"column"} justifyContent={"center"} alignItems={"center"} spacing={{xs:1, lg: 2}} mt={{xs:2, lg: 5}}>
             <Box>
                 <Image
                     src="/doctor.webp"
-                    width={300}
-                    height={300}
+                    width={matches ? 150 : 300}
+                    height={matches ? 150 : 300}
                     alt="doctor kim"
                     style={{
-                        width: '300px',
-                        height: '300px',
+                        width: matches ? '150px' : '300px',
+                        height: matches ? '150px' : '300px',
                         objectFit: 'cover',
                         borderRadius: '50%',
                         objectPosition: 'center'
@@ -22,14 +27,14 @@ export default function DoctorItem(){
             <Typography 
                 variant="h3"
                 component={"h3"}
-                fontSize={24}
+                fontSize={{xs: 20, lg: 24}}
                 fontWeight={700}
                 color="neutral.cl900"
             >
                 Nguyễn Văn A
             </Typography>
             <Typography
-                fontSize={18}
+                fontSize={{xs: 16, lg:18}}
                 fontWeight={400}
                 color="neutral.cl500"
             >

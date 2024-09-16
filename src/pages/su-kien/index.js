@@ -10,7 +10,7 @@ export default function EventPage(){
             <HeroEvent />
             <Container maxWidth={gtgConfig.maxWidth}>
                 <Box pb={10}>
-                    <Grid2 container spacing={3}>
+                    <Grid2 container spacing={{xs:3, lg: 6}}>
                         <Grid2 size={{xs: 12, lg: 4}}>
                             <EventItem />
                         </Grid2>

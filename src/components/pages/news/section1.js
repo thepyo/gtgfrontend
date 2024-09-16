@@ -6,7 +6,7 @@ import Link from "next/link";
 function ReadDayItem(){
     return(
         <Stack direction={"row"} alignItems={"center"} spacing={2}>
-            <Box className="hover-img">
+            <Box className="hover-img" component={Link} href="/tin-tuc/hoi-thao-lam-dep-cham-soc-da">
                 <figure>
                     <Image
                         src="/readday.jpg"
@@ -17,13 +17,15 @@ function ReadDayItem(){
                 </figure>
             </Box>
             <Stack direction={"column"} spacing={1}>
-                <Typography
-                    fontWeight={600}
-                    fontSize={16}
-                    color="neutral.cl900"
-                >
-                    Lorem ipsum dolor sit amet consectetur. Leo.
-                </Typography>
+                <Link href="/tin-tuc/hoi-thao-lam-dep-cham-soc-da">
+                    <Typography
+                        fontWeight={600}
+                        fontSize={16}
+                        color="neutral.cl900"
+                    >
+                        Lorem ipsum dolor sit amet consectetur. Leo.
+                    </Typography>
+                </Link>
                 <Stack direction={"row"} spacing={1} alignItems={"center"}>
                     <IconEye stroke={1} color="#888" size={19}/>
                     <Typography variant="body2" fontSize={14} fontWeight={400} color="neutral.cl500">
@@ -44,7 +46,7 @@ export default function NewsSection1(){
             <Grid2 size={{xs: 12, lg: 8}}>
                 <Stack direction={"column"} spacing={3}>
                     <Box position={"relative"}>
-                        <Box className="hover-img">
+                        <Box className="hover-img" component={Link} href="/tin-tuc/hoi-thao-lam-dep-cham-soc-da">
                             <figure>
                                 <Image
                                     src="/news.jpg"
@@ -53,7 +55,7 @@ export default function NewsSection1(){
                                     alt="news"
                                     style={{
                                         width: '100%',
-                                        height: math ? '300px' : '375px',
+                                        height: math ? '200px' : '375px',
                                         objectFit: 'cover',
                                         objectPosition: 'center'
                                     }}

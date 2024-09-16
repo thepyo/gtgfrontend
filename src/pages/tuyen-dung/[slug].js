@@ -1,3 +1,4 @@
+import CallToActionDefault from "@/components/cta/default";
 import TuyendungDetailDescription from "@/components/pages/tuyendung/detail/description";
 import TuyendungDetailForm from "@/components/pages/tuyendung/detail/form";
 import TuyendungDetailMeta from "@/components/pages/tuyendung/detail/meta";
@@ -52,26 +53,7 @@ export default function TuyendungDetailPage(){
                         </Grid2>
                     </Grid2>
 
-                    <Stack
-                        direction={{
-                            xs: 'column',
-                            lg: "row"
-                        }}
-                        justifyContent={"space-between"}
-                        alignItems={"center"}
-                        gap={{
-                            xs: 3,
-                            lg: 30
-                        }}
-                        pt={5}
-                    >
-                        <Typography variant="h2" component={"h2"} fontSize={60} fontWeight={600} color="neutral.cl900">
-                            Biến giấc mơ làm đẹp của bạn thành hiện thực
-                        </Typography>
-                        <Box display={{xs:'none', lg: 'block'}}>
-                            <IconArrowRight size={80} color={theme.palette.neutral.cl900}/>
-                        </Box>
-                    </Stack>
+                    <CallToActionDefault />
                 </Stack>
 
             </Container>

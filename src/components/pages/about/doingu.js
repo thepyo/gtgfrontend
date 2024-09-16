@@ -19,7 +19,10 @@ export default function DoctorSection(){
                             xs: 'column',
                             lg: "row"
                         }} 
-                        alignItems={"center"} 
+                        alignItems={{
+                            xs: 'flex-start',
+                            lg: "center"
+                        }} 
                         spacing={2}
                     >
                         <Box>
@@ -34,14 +37,17 @@ export default function DoctorSection(){
                             variant="h2"
                             component={"h2"}
                             fontSize={{
-                                xs: 38,
+                                xs: 30,
                                 lg: 48
                             }}
                             fontWeight={600}
                             lineHeight={{xs: "45px", lg: 1}}
-                            letterSpacing={"-0.25%"}
+                            letterSpacing={"-1px"}
                             color="neutral.cl900"
-                            textAlign={"center"}
+                            textAlign={{
+                                xs: 'flex-start',
+                                lg: "center"
+                            }}
                         >
                            Đội ngũ của chúng tôi
                         </Typography>
@@ -49,7 +55,10 @@ export default function DoctorSection(){
 
                     <Typography
                         variant="body2"
-                        fontSize={20}
+                        fontSize={{
+                            xs: 18,
+                            lg: 20
+                        }}
                         fontWeight={400}
                         color="neutral.cl500"
                     >
@@ -57,22 +66,22 @@ export default function DoctorSection(){
                     </Typography>
 
                     <Grid2 container spacing={3}>
-                        <Grid2 size={{xs: 12, lg: 4}}>
+                        <Grid2 size={{xs: 6, lg: 4}}>
                             <DoctorItem />
                         </Grid2>
-                        <Grid2 size={{xs: 12, lg: 4}}>
+                        <Grid2 size={{xs: 6, lg: 4}}>
                             <DoctorItem />
                         </Grid2>
-                        <Grid2 size={{xs: 12, lg: 4}}>
+                        <Grid2 size={{xs: 6, lg: 4}}>
                             <DoctorItem />
                         </Grid2>
-                        <Grid2 size={{xs: 12, lg: 4}}>
+                        <Grid2 size={{xs: 6, lg: 4}}>
                             <DoctorItem />
                         </Grid2>
-                        <Grid2 size={{xs: 12, lg: 4}}>
+                        <Grid2 size={{xs: 6, lg: 4}}>
                             <DoctorItem />
                         </Grid2>
-                        <Grid2 size={{xs: 12, lg: 4}}>
+                        <Grid2 size={{xs: 6, lg: 4}}>
                             <DoctorItem />
                         </Grid2>
                     </Grid2>
