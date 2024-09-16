@@ -101,7 +101,7 @@ export default function Section1() {
                                     textAlign={"justify"}
                                     color="inherit"
                                 >
-                                    Chúng tôi là đơn vị dẫn đầu trong lĩnh vực cung cấp giải pháp quản lý và bán hàng đa kênh cho các nhà bán hàng tại Việt Nam. Với sứ mệnh "Làm cho việc bán hàng dễ dàng hơn", chúng tôi đã thành công phát triển những sản phẩm mang tính đột phá, giúp các khách hàng của mình tăng trưởng toàn diện.
+                                    Chúng tôi là đơn vị dẫn đầu trong lĩnh vực cung cấp giải pháp quản lý và bán hàng đa kênh cho các nhà bán hàng tại Việt Nam. Với sứ mệnh Làm cho việc bán hàng dễ dàng hơn, chúng tôi đã thành công phát triển những sản phẩm mang tính đột phá, giúp các khách hàng của mình tăng trưởng toàn diện.
                                 </Typography>
                                 <Typography
                                     variant="body1"

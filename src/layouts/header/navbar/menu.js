@@ -7,7 +7,7 @@ export const menu = [
     ]},
     {id:6,label:'Sự kiện', link: '/su-kien'},
     {id:7,label:'Tin tức', link: '/tin-tuc'},
-    {id:8,label:'Case Study', link: '/'},
+    // {id:8,label:'Case Study', link: '/'},
     {id:9,label:'Tuyển dụng', link: '/tuyen-dung'},
     {id:10,label:'Liên hệ', link: '/lien-he'},
 ]
