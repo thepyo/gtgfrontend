@@ -57,19 +57,19 @@ a {
 .button-play-animation.is-play {
   background-color: #fff;
   border-radius: 50%;
-  width: 80px;
-  height: 80px;
+  width: 70px;
+  height: 70px;
 }
 .button-play-animation.is-play .button-outer-circle {
   background: rgb(29, 181, 190, 0.3);
   border-radius: 50%;
   position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  height: 100%;
-  width: 100%;
+  top: -10%;
+  left: -10%;
+  right: -10%;
+  bottom: -10%;
+  height: 120%;
+  width: 120%;
 }
 .button-play-animation.is-play .button-icon {
   position: absolute;
@@ -84,7 +84,7 @@ a {
           animation: fadeIn 3s ease;
 }
 .button-play-animation.is-play .button-icon .path {
-  stroke-dasharray: 90;
+  stroke-dasharray: 100;
   stroke-dashoffset: 0;
   -webkit-animation: triangleStroke 2s;
           animation: triangleStroke 2s;
@@ -117,7 +117,7 @@ a {
 }
 @-webkit-keyframes triangleStroke {
   from {
-    stroke-dashoffset: 90;
+    stroke-dashoffset: 100;
   }
   to {
     stroke-dashoffset: 0;
@@ -125,7 +125,7 @@ a {
 }
 @keyframes triangleStroke {
   from {
-    stroke-dashoffset: 90;
+    stroke-dashoffset: 100;
   }
   to {
     stroke-dashoffset: 0;
@@ -272,4 +272,62 @@ a {
 .text-effect span{
   background-color: #F4C817;
   padding: 0 6px
+}
+
+.slide-customer .swiper-pagination-bullet,
+.slide-news .swiper-pagination-bullet
+{
+  width: 15px !important;
+  height: 15px !important;
+}
+.slide-customer .swiper-pagination-bullet.swiper-pagination-bullet-active,
+.slide-news .swiper-pagination-bullet.swiper-pagination-bullet-active
+{
+  width: 45px !important;
+  border-radius: 9px !important;
+}
+.slide-customer{
+  padding-bottom: 60px !important;
+}
+
+.slide-customer .swiper-slide{
+  width: auto !important;
+}
+
+.slide-news{
+  padding-bottom: 60px !important;
+  position: relative !important;
+}
+
+.slide-news .swiper-pagination {
+  position: absolute !important;
+  width: auto !important;
+}
+
+.slide-news .swiper-button-prev,
+.slide-news .swiper-button-next
+{
+  position: absolute !important;
+  bottom: 0 !important;
+  top: auto !important;
+  width: 50px !important;
+  height: 50px !important;
+  border-radius: 50%;
+  display: flex;
+  background-color: #00AEEF;
+}
+
+.slide-news .swiper-button-prev{
+  left: unset !important;
+  right: 70px !important;
+}
+
+.slide-news .swiper-button-next:after, 
+.slide-news .swiper-button-prev:after{
+  font-size: 15px !important;
+  color: #ffffff !important
+}
+
+.swiper-pagination-bullet-active{
+  background: #00AEEF !important;
 }

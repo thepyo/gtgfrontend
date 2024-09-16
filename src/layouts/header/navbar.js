@@ -23,7 +23,7 @@ export default function Navbar(){
             {/* desktop */}
             <Stack 
                 direction={"row"} 
-                justifyContent={"center"} 
+                justifyContent={"flex-end"} 
                 alignItems={"center"} 
                 spacing={5} 
                 height={"100%"}

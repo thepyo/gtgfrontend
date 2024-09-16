@@ -35,10 +35,10 @@ export default function NavbarItem({item}){
                 sx={{cursor: 'pointer'}}
                 className="navbar-item"
             >
-                <Typography variant="body2" fontSize={16} fontWeight={400} color="inherit">
+                <Typography variant="body2" fontSize={17} fontWeight={500} color="inherit">
                     {item.label}
                 </Typography>
-                <IconChevronDown size={16} color={theme.palette.neutral.cl400} />
+                <IconChevronDown size={17} color={theme.palette.neutral.cl600} />
             </Stack>
             
             <Popper 
@@ -54,7 +54,7 @@ export default function NavbarItem({item}){
                         <Stack minWidth={300} my={2} py={3} px={2} direction={"column"} spacing={2} divider={<Divider light />}>
                             {item?.child?.map(e => 
                                 <Link href={e.link} key={e.id} className="navbar-item">
-                                    <Typography variant="body2" fontSize={16} fontWeight={400} color="inherit">
+                                    <Typography variant="body2" fontSize={17} fontWeight={500} color="inherit">
                                         {e.label}
                                     </Typography>
                                 </Link>
@@ -70,7 +70,7 @@ export default function NavbarItem({item}){
 
     return(
         <Link href={item.link} className="navbar-item">
-            <Typography variant="body2" fontSize={16} fontWeight={400} color="inherit">
+            <Typography variant="body2" fontSize={17} fontWeight={500} color="inherit">
                 {item.label}
             </Typography>
         </Link>

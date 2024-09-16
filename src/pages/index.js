@@ -1,16 +1,28 @@
 import * as React from 'react';
 import Container from '@mui/material/Container';
-import Typography from '@mui/material/Typography';
-import Box from '@mui/material/Box';
+import CallToActionDefault from '@/components/cta/default';
+import { gtgConfig } from '@/config/global';
+import SectionAboutHomePage from '@/components/pages/homepage/section2';
+import YoungBussinessHomePageSection from '@/components/pages/homepage/youngBussiness';
+import ServiceHomePageSection from '@/components/pages/homepage/service';
+import HumanResourceHomePageSection from '@/components/pages/homepage/humanResource';
+import CustomerTellingHomePageSection from '@/components/pages/homepage/customer';
+import NewsHomepageSection from '@/components/pages/homepage/news';
+import SlideHomePageDefault from '@/components/pages/homepage/slide';
 
 export default function Index() {
   return (
-    <Container maxWidth="sm">
-      <Box sx={{ my: 4 }}>
-        <Typography variant="h4" component="h1" sx={{ mb: 2 }} color="#000">
-          Tối làm nốt
-        </Typography>
-      </Box>
-    </Container>
+    <>
+      <SlideHomePageDefault />
+      <SectionAboutHomePage />
+      <YoungBussinessHomePageSection />
+      <ServiceHomePageSection />
+      <HumanResourceHomePageSection />
+      <CustomerTellingHomePageSection />
+      <NewsHomepageSection />
+      <Container maxWidth={gtgConfig.maxWidth}>
+        <CallToActionDefault />
+      </Container>
+    </>
   );
 }
