@@ -5,7 +5,7 @@ export default function DoctorItem(){
 
     const matches = useMediaQuery('(max-width:700px)');
 
-    if(!matches) return
+    if(matches === undefined) return
 
     return(
         <Stack direction={"column"} justifyContent={"center"} alignItems={"center"} spacing={{xs:1, lg: 2}} mt={{xs:2, lg: 5}}>
