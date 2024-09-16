@@ -119,7 +119,7 @@ export default function SectionThePyo(){
                             letterSpacing={"-1.8px"}
                             color="neutral.cl900"
                         >
-                            Xoá sổ hôi nách" - Không còn khoảng cách Ứng dụng công nghệ PYOULTIMATE
+                            Xoá sổ hôi nách - Không còn khoảng cách Ứng dụng công nghệ PYOULTIMATE
                         </Typography>
                     </Box>
                 </Container>
