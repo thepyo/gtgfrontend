@@ -6,6 +6,7 @@ import Widget3 from "./wiget3";
 import Widget4 from "./wiget4";
 import Link from "next/link";
 import { IconPointFilled } from "@tabler/icons-react";
+import MobileNavigate from "./mobile";
 
 export default function Footer(){
     return(
@@ -65,6 +66,7 @@ export default function Footer(){
                     </Grid2>
                 </Grid2>
             </Container>
+            <MobileNavigate />
         </Stack>
     )
 }

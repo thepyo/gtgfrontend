@@ -1,5 +1,5 @@
 import { gtgConfig } from "@/config/global";
-import { Box, Button, Container, Stack, Typography, useMediaQuery } from "@mui/material";
+import { Box, Button, Container, Dialog, Stack, Typography, useMediaQuery } from "@mui/material";
 import { IconArrowRight } from "@tabler/icons-react";
 import Image from "next/image";
 
@@ -22,6 +22,8 @@ function Item(){
     const matches = useMediaQuery('(max-width:720px)');
 
     const height = matches ? 450 : 'calc(100vh - 90px)'
+
+    const [open,setOpen] = useState(false)
 
     return(
         <Box height={height} position={"relative"}>
@@ -89,7 +91,23 @@ function Item(){
                     </Stack>
                 </Stack>
             </Container>
-
+            <Dialog
+                open={open}
+                onClose={()=>setOpen(false)}
+                aria-labelledby="video-dialog-title"
+                aria-describedby="video-dialog-description"
+                maxWidth="lg"
+            >
+                <iframe 
+                    width="1000" 
+                    height="550" 
+                    src="https://www.youtube.com/embed/8epqhJU7l3Q?si=DbW0S94ToHAhNP3U?modestbranding=1&showinfo=0" 
+                    title="YouTube video player" 
+                    frameborder="0" 
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" 
+                    allowfullscreen 
+                />
+            </Dialog>
         </Box>
     )
 }
