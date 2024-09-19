@@ -1,24 +1,30 @@
+import * as React from 'react';
 import dynamic from 'next/dynamic';
-import { useEffect, useState } from 'react';
-const EmptyLayout =  dynamic(() => import('@/layouts/empty'))
+import { gtgConfig } from '@/config/global';
+
+const Container = dynamic(()=> import('@mui/material/Container'))
+const CallToActionDefault = dynamic(() => import('@/components/cta/default'))
+const SectionAboutHomePage = dynamic(() => import('@/components/pages/homepage/section2'))
 const YoungBussinessHomePageSection = dynamic(() => import('@/components/pages/homepage/youngBussiness'))
+const ServiceHomePageSection = dynamic(() => import('@/components/pages/homepage/service'))
+const HumanResourceHomePageSection = dynamic(() => import('@/components/pages/homepage/humanResource'))
+const CustomerTellingHomePageSection = dynamic(() => import('@/components/pages/homepage/customer'))
+const NewsHomepageSection = dynamic(() => import('@/components/pages/homepage/news'))
+const SlideHomePageDefault = dynamic(() => import('@/components/pages/homepage/slide'))
 
 export default function Index() {
-
-  const [loading,setLoading] = useState(true)
-
-  useEffect(()=>{
-
-    let timer = setTimeout(() => setLoading(false), 500)
-
-    return () => clearTimeout(timer)
-  },[])
-
-  if(!loading) return(
-    <YoungBussinessHomePageSection />
-  )
-
-  return <>loading</>
+  return (
+    <>
+      <SlideHomePageDefault />
+      <SectionAboutHomePage />
+      <YoungBussinessHomePageSection />
+      <ServiceHomePageSection />
+      <HumanResourceHomePageSection />
+      <CustomerTellingHomePageSection />
+      <NewsHomepageSection />
+      <Container maxWidth={gtgConfig.maxWidth}>
+        <CallToActionDefault />
+      </Container>
+    </>
+  );
 }
-
-Index.Layout = EmptyLayout
