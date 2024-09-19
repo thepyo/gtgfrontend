@@ -58,7 +58,7 @@ export default function Section1() {
                                     <Box className="button-icon is-play">
                                         <svg height="100%" width="100%" fill="#00AEEF">
                                             <polygon className="triangle" points="5,0 30,15 5,30" viewBox="0 0 30 15"></polygon>
-                                            <path className="path" d="M5,0 L30,15 L5,30z" fill="none" stroke="#00AEEF" stroke-width="1"></path>
+                                            <path className="path" d="M5,0 L30,15 L5,30z" fill="none" stroke="#00AEEF"></path>
                                         </svg>
                                     </Box>
                                 </Button>

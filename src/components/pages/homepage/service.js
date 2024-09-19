@@ -19,12 +19,12 @@ function Item({
                 width={385}
                 height={400}
                 alt={title}
-                style={{
-                    width: '100%',
-                    height: '400px',
-                    objectFit: 'cover',
-                    objectPosition: 'center'
-                }}
+                // style={{
+                //     width: '100%',
+                //     height: '400px',
+                //     objectFit: 'cover',
+                //     objectPosition: 'center'
+                // }}
             />
             <Stack
                 direction={"column"}

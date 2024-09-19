@@ -33,6 +33,8 @@ function Item(){
                     width={1920}
                     height={700}
                     alt=""
+                    quality={60}
+                    priority
                     style={{
                         width: '100%',
                         height: height,
@@ -84,7 +86,7 @@ function Item(){
                             <Box className="button-icon is-play">
                                 <svg height="100%" width="100%" fill="#00AEEF">
                                     <polygon className="triangle" points="5,0 30,15 5,30" viewBox="0 0 30 15"></polygon>
-                                    <path className="path" d="M5,0 L30,15 L5,30z" fill="none" stroke="#00AEEF" stroke-width="1"></path>
+                                    <path className="path" d="M5,0 L30,15 L5,30z" fill="none" stroke="#00AEEF"></path>
                                 </svg>
                             </Box>
                         </Button>
@@ -157,6 +159,8 @@ export default function SlideHomePageDefault(){
                             src={"/slide.jpg"}
                             width={262}
                             height={161}
+                            quality={60}
+                            priority
                             alt=""
                             style={{
                                 borderRadius: '8px'
@@ -168,6 +172,8 @@ export default function SlideHomePageDefault(){
                             src={"/thumb1.jpg"}
                             width={262}
                             height={161}
+                            quality={60}
+                            priority
                             alt=""
                             style={{
                                 borderRadius: '8px'
@@ -179,6 +185,8 @@ export default function SlideHomePageDefault(){
                             src={"/thumb2.jpg"}
                             width={262}
                             height={161}
+                            quality={60}
+                            priority
                             alt=""
                             style={{
                                 borderRadius: '8px'
@@ -190,6 +198,8 @@ export default function SlideHomePageDefault(){
                             src={"/thumb3.jpg"}
                             width={262}
                             height={161}
+                            quality={60}
+                            priority
                             alt=""
                             style={{
                                 borderRadius: '8px'
