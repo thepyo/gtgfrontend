@@ -1,21 +1,23 @@
 import * as React from 'react';
-import dynamic from 'next/dynamic';
 import { gtgConfig } from '@/config/global';
-
-const Container = dynamic(()=> import('@mui/material/Container'))
-const CallToActionDefault = dynamic(() => import('@/components/cta/default'))
-const SectionAboutHomePage = dynamic(() => import('@/components/pages/homepage/section2'))
-const YoungBussinessHomePageSection = dynamic(() => import('@/components/pages/homepage/youngBussiness'))
-const ServiceHomePageSection = dynamic(() => import('@/components/pages/homepage/service'))
-const HumanResourceHomePageSection = dynamic(() => import('@/components/pages/homepage/humanResource'))
-const CustomerTellingHomePageSection = dynamic(() => import('@/components/pages/homepage/customer'))
-const NewsHomepageSection = dynamic(() => import('@/components/pages/homepage/news'))
-const SlideHomePageDefault = dynamic(() => import('@/components/pages/homepage/slide'))
+import { NextSeo } from 'next-seo';
+import SectionAboutHomePage from '@/components/pages/homepage/section2';
+import YoungBussinessHomePageSection from '@/components/pages/homepage/youngBussiness';
+import ServiceHomePageSection from '@/components/pages/homepage/service';
+import HumanResourceHomePageSection from '@/components/pages/homepage/humanResource';
+import CustomerTellingHomePageSection from '@/components/pages/homepage/customer';
+import NewsHomepageSection from '@/components/pages/homepage/news';
+import { Container } from '@mui/material';
+import CallToActionDefault from '@/components/cta/default';
 
 export default function Index() {
   return (
     <>
-      <SlideHomePageDefault />
+      <NextSeo
+        title="GTG Group"
+        description="A short description goes here."
+      />
+      {/* <SlideHomePageDefault /> */}
       <SectionAboutHomePage />
       <YoungBussinessHomePageSection />
       <ServiceHomePageSection />
