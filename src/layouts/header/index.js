@@ -3,6 +3,7 @@ import { gtgConfig } from "@/config/global";
 import { Box, Container, Grid2, Stack } from "@mui/material";
 import Navbar from "./navbar";
 import Search from "./search";
+import Image from "next/image";
 
 export default function Header(){
     return(
@@ -10,7 +11,7 @@ export default function Header(){
             <Container maxWidth={gtgConfig.maxWidth}>
                 <Grid2 container spacing={2}>
                     <Grid2 size={{xs:5, lg: 2}}>
-                        <Logo />
+                        <Image src={"/logo.svg"}  width={123} height={44} alt="GTG Logo" />
                     </Grid2>
                     <Grid2 size={{xs:1, lg: 8}}>
                         <Navbar />

@@ -10,12 +10,12 @@ const ServiceHomePageSection = dynamic(() => import('@/components/pages/homepage
 const HumanResourceHomePageSection = dynamic(() => import('@/components/pages/homepage/humanResource'))
 const CustomerTellingHomePageSection = dynamic(() => import('@/components/pages/homepage/customer'))
 const NewsHomepageSection = dynamic(() => import('@/components/pages/homepage/news'))
-const SlideHomePageDefault = dynamic(() => import('@/components/pages/homepage/slide'))
+// const SlideHomePageDefault = dynamic(() => import('@/components/pages/homepage/slide'))
 
 export default function Index() {
   return (
     <>
-      <SlideHomePageDefault />
+      {/* <SlideHomePageDefault /> */}
       <SectionAboutHomePage />
       <YoungBussinessHomePageSection />
       <ServiceHomePageSection />
