@@ -1,3 +1,3 @@
 export default function EmptyLayout({children}){
-    return <>{children}</>
+    return <div style={{backgroundColor: '#fff'}}>{children}</div>
 }
