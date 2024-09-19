@@ -16,6 +16,8 @@ export default function YoungBussinessHomePageSection(){
                                 width={475}
                                 height={523}
                                 alt=""
+                                priority
+                                quality={60}
                                 style={{
                                     width: '100%',
                                     height: 'auto'
