@@ -33,7 +33,7 @@ function Item({
     )
 }
 
-export default function SectionLaurent() {
+export default function SectionLaurent({data}) {
     return (
         <Stack
             minHeight={750}
@@ -70,7 +70,7 @@ export default function SectionLaurent() {
                                             fontFamily: philosopher.style.fontFamily
                                         }}
                                     >
-                                        Công ty mỹ phẩm Laurent
+                                        {data?.title_laurent}
                                     </Typography>
                                     <Image src="/laurent.svg" width={28} height={21} alt="laurent icon" />
                                 </Stack>
@@ -82,7 +82,7 @@ export default function SectionLaurent() {
                                         maxWidth: 486
                                     }}
                                 >
-                                    Là thương hiệu mỹ phẩm cao cấp, cung cấp các sản phẩm chăm sóc da và trang điểm được sản xuất theo tiêu chuẩn quốc tế, cam kết chất lượng và an toàn cho người sử dụng.
+                                    {data?.description_laurent}
                                 </Typography>
                             </Stack>
 
@@ -106,15 +106,18 @@ export default function SectionLaurent() {
                                     color="neutral.cl900"
                                     lineHeight={1.6}
                                 >
-                                    Số 2 Lô 13A - Trung Yên 6, Phường Trung Hòa, Quận Cầu Giấy, TP Hà Nội , Hanoi, Vietnam
+                                    {data?.address_laurent}
                                 </Typography>
                             </Stack>
 
                             <Stack direction={{ xs: 'column', lg: "row" }} spacing={{ xs: 3, lg: 8 }}>
-                                <Item />
                                 <Item 
-                                    text1="NHÂN VIÊN"
-                                    text2="1,000+"
+                                     text1={data?.title_sec1_laurent}
+                                     text2={data?.content_sec1_laurent}
+                                />
+                                <Item 
+                                     text1={data?.title_sec2_laurent}
+                                     text2={data?.content_sec2_laurent}
                                 />
                             </Stack>
                         </Stack>

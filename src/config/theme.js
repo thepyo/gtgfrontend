@@ -1,7 +1,7 @@
 import { Plus_Jakarta_Sans } from 'next/font/google';
 import { createTheme } from '@mui/material/styles';
 import { red } from '@mui/material/colors';
-
+import { shadows } from "./shadows";
 const jakarta = Plus_Jakarta_Sans({
   weight: ['300', '400', '500', '600', '700'],
   subsets: ['latin'],
@@ -52,6 +52,7 @@ const theme = createTheme({
   typography: {
     fontFamily: jakarta.style.fontFamily,
   },
+  shadows,
 });
 
 export default theme;

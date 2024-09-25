@@ -3,7 +3,7 @@ import theme from "@/config/theme";
 import { Box, Container, Divider, Grid2, Stack, Typography } from "@mui/material";
 import DoctorItem from "./doctor";
 
-export default function DoctorSection(){
+export default function DoctorSection({data}){
     return(
         <Box py={{xs: 4, lg: 8}}>
             <Container maxWidth={gtgConfig.maxWidth}>
@@ -11,7 +11,7 @@ export default function DoctorSection(){
                     <Stack direction={"row"} justifyContent={"flex-start"} alignItems={"center"} spacing={1} zIndex={1}>
                         <Divider light sx={{ bgcolor: theme.palette.primary.main, width: 31, height: 1 }} />
                         <Typography variant="body2" fontSize={16} fontWeight={400} color="primary.main" textTransform={"uppercase"}>
-                            Thành viên
+                            {data?.sub_title_team}
                         </Typography>
                     </Stack>
                     <Stack 
@@ -49,7 +49,7 @@ export default function DoctorSection(){
                                 lg: "center"
                             }}
                         >
-                           Đội ngũ của chúng tôi
+                           {data?.title_team}
                         </Typography>
                     </Stack>
 
@@ -62,28 +62,22 @@ export default function DoctorSection(){
                         fontWeight={400}
                         color="neutral.cl500"
                     >
-                        Cùng ghi nhận những tài năng đứng sau sự phát triển thành cồn của công ty
+                         {data?.description_team}
                     </Typography>
 
                     <Grid2 container spacing={3}>
-                        <Grid2 size={{xs: 6, lg: 4}}>
-                            <DoctorItem />
-                        </Grid2>
-                        <Grid2 size={{xs: 6, lg: 4}}>
-                            <DoctorItem />
-                        </Grid2>
-                        <Grid2 size={{xs: 6, lg: 4}}>
-                            <DoctorItem />
-                        </Grid2>
-                        <Grid2 size={{xs: 6, lg: 4}}>
-                            <DoctorItem />
-                        </Grid2>
-                        <Grid2 size={{xs: 6, lg: 4}}>
-                            <DoctorItem />
-                        </Grid2>
-                        <Grid2 size={{xs: 6, lg: 4}}>
-                            <DoctorItem />
-                        </Grid2>
+
+                        {data?.teams?.data?.map(item =>
+                            <Grid2 size={{xs: 6, lg: 4}} key={item.id}>
+                                <DoctorItem 
+                                    title={item?.attributes?.title}
+                                    position={item?.attributes?.position}
+                                    thumbnail={item?.attributes?.thumbnail?.data?.attributes?.url && gtgConfig.cdnDomain + item?.attributes?.thumbnail?.data?.attributes?.url}
+                                    link={`/doi-ngu/${item?.attributes?.slug}`}
+                                />
+                            </Grid2>
+                        )}
+                        
                     </Grid2>
                 </Stack>
             </Container>

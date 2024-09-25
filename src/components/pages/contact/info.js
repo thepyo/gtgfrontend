@@ -2,7 +2,7 @@ import Logo from "@/components/ui/logo";
 import { Stack, Typography } from "@mui/material";
 import { IconMapPin, IconPhone, IconMail } from "@tabler/icons-react";
 
-export default function InfoContactPage(){
+export default function InfoContactPage({data}){
     return(
         <Stack 
             direction={"column"} 
@@ -24,7 +24,7 @@ export default function InfoContactPage(){
                 letterSpacing={"-2.5%"}
                 color="neutral.cl900"
             >
-                TẬP ĐOÀN GTG
+                {data?.company}
             </Typography>
 
             <Stack direction={"row"} spacing={2} width={"100%"} alignItems={"start"}>
@@ -46,7 +46,7 @@ export default function InfoContactPage(){
                         lineHeight={"24px"} 
                         color="neutral.cl900"
                     >
-                        Tầng 5, 33 Giang Văn Minh, Kim Mã, Ba Đình, Hà Nội
+                        {data?.address}
                     </Typography>
                 </Stack>
             </Stack>
@@ -70,7 +70,7 @@ export default function InfoContactPage(){
                         lineHeight={"24px"} 
                         color="neutral.cl900"
                     >
-                        (+84) 97 531 9898
+                        {data?.phone}
                     </Typography>
                 </Stack>
             </Stack>
@@ -94,7 +94,7 @@ export default function InfoContactPage(){
                         lineHeight={"24px"} 
                         color="neutral.cl900"
                     >
-                        gtg@beauty.vn
+                        {data?.email}
                     </Typography>
                 </Stack>
             </Stack>

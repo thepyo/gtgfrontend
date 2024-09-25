@@ -1,7 +1,7 @@
 import { Box, Stack } from "@mui/material";
 import Image from "next/image";
 
-export default function HeroBrandingSection(){
+export default function HeroBrandingSection({data}){
     return(
         <Stack
             direction={"row"}

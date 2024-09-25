@@ -77,7 +77,7 @@ function Item({
     )
 }
 
-export default function SectionDrTien(){
+export default function SectionDrTien({data}){
 
     const matches = useMediaQuery('(max-width:700px)');
 
@@ -108,7 +108,7 @@ export default function SectionDrTien(){
                                         color="primary.main"
                                         fontFamily={philosopher.style.fontFamily}
                                     >
-                                        Phòng khám thẩm mỹ y khoa Dr - Tiến
+                                        {data?.title_dr_tien}
                                     </Typography>
                                     <Typography
                                         fontSize={16}
@@ -118,7 +118,7 @@ export default function SectionDrTien(){
                                         maxWidth={545}
                                         textAlign={"justify"}
                                     >
-                                        Là địa chỉ uy tín trong lĩnh vực thẩm mỹ y khoa, nổi tiếng với đội ngũ bác sĩ chuyên môn cao và trang thiết bị hiện đại, cung cấp các dịch vụ chăm sóc sắc đẹp và sức khỏe hàng đầu.
+                                        {data?.description_dr_tien}
                                     </Typography>
                                 </Stack>
                             </Stack>
@@ -136,16 +136,19 @@ export default function SectionDrTien(){
                                     <Divider orientation="vertical" flexItem sx={{bgcolor: theme.palette.neutral.cl700}}/>
                                 }
                             >
-                                <Item />
                                 <Item 
-                                    text1='Nhân viên'
-                                    text2="1,000+"
+                                    text1={data?.title_sec1_dr_tien}
+                                    text2={data?.content_sec1_dr_tien}
+                                />
+                                <Item 
+                                    text1={data?.title_sec2_dr_tien}
+                                    text2={data?.content_sec2_dr_tien}
                                 />
                             </Stack>
                             
                             <Box mt={{xs:3, lg: 10}}>
                                 <ItemLocation 
-                                    address="Số 2 Lô 13A - Trung Yên 6, Phường Trung Hòa, Quận Cầu Giấy, TP Hà Nội , Hanoi, Vietnam"
+                                    address={data?.address_dr_tien}
                                 />
                             </Box>
 

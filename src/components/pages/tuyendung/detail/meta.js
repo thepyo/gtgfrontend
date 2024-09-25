@@ -1,15 +1,16 @@
 import { Divider, Stack, Typography } from "@mui/material";
 
-const metas = [
-    {id:1,name: 'Mã tuyển dụng', content: 'NTD-9616'},
-    {id:2,name: 'Loại công việc', content: 'Toàn thời gian cố định'},
-    {id:3,name: 'Mức lương', content: '30-35 tr'},
-    {id:4,name: 'Số lượng tuyển', content: 2},
-    {id:5,name: 'Hạn nộp hồ sơ', content: '30/09/2024'},
-    {id:6,name: 'Địa điểm làm việc', content: 'Hà Nội'},
-]
+export default function TuyendungDetailMeta({post}){
 
-export default function TuyendungDetailMeta(){
+    const metas = [
+        {id:1,name: 'Mã tuyển dụng', content: post.code},
+        {id:2,name: 'Loại công việc', content: post.type},
+        {id:3,name: 'Mức lương', content: post.salary},
+        {id:4,name: 'Số lượng tuyển', content: post.number},
+        {id:5,name: 'Hạn nộp hồ sơ', content: post.deadline},
+        {id:6,name: 'Địa điểm làm việc', content: post.location},
+    ]
+
     return(
         <Stack direction={"column"} spacing={1.5} divider={<Divider light />}>
             {metas.map(item =>

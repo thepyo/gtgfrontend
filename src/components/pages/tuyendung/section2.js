@@ -1,7 +1,7 @@
 import { gtgConfig } from "@/config/global";
 import { Box, Container, Divider, Grid2, Stack, Typography } from "@mui/material";
 
-export default function Section2(){
+export default function Section2({data}){
     return(
         <Stack
             direction={"column"}
@@ -41,7 +41,7 @@ export default function Section2(){
                         letterSpacing={"-0.25%"}
                         color="primary.main"
                     >
-                        Lý do bạn nên chọn làm việc tại GTG
+                        {data?.title_sec_2}
                     </Typography>
                 </Stack>
             </Container>
@@ -67,7 +67,7 @@ export default function Section2(){
                                     fontWeight={600}
                                     color="neutral.cl900"
                                 >
-                                    Chế độ đãi ngộ
+                                    {data?.title_sec2_1}
                                 </Typography>
 
                                 <Typography
@@ -78,7 +78,7 @@ export default function Section2(){
                                     textAlign={"justify"}
                                     maxWidth={{xs: '100%', lg: 275}}
                                 >
-                                    Công ty thẩm mỹ viện chúng tôi cung cấp chế độ đãi ngộ hấp dẫn, bao gồm lương cạnh tranh, thưởng hiệu quả, và phúc lợi toàn diện.
+                                    {data?.content_sec2_1}
                                 </Typography>
 
                             </Stack>
@@ -92,7 +92,7 @@ export default function Section2(){
                                     fontWeight={600}
                                     color="neutral.cl900"
                                 >
-                                    Nhiều cơ hội
+                                    {data?.title_sec2_2}
                                 </Typography>
 
                                 <Typography
@@ -103,7 +103,7 @@ export default function Section2(){
                                     textAlign={"justify"}
                                     maxWidth={{xs: '100%', lg: 275}}
                                 >
-                                    Làm việc tại công ty thẩm mỹ viện, bạn sẽ có cơ hội phát triển và thăng tiến nhanh chóng.
+                                    {data?.content_sec2_2}
                                 </Typography>
                                 <Box display={{xs: 'none', lg: 'block'}}>
                                     <svg width="48" height="81" viewBox="0 0 48 81" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -134,7 +134,7 @@ export default function Section2(){
                                     fontWeight={600}
                                     color="neutral.cl900"
                                 >
-                                    Nơi làm việc
+                                    {data?.title_sec2_3}
                                 </Typography>
 
                                 <Typography
@@ -145,7 +145,7 @@ export default function Section2(){
                                     textAlign={"justify"}
                                     maxWidth={{xs: '100%', lg: 275}}
                                 >
-                                    Công ty thẩm mỹ viện có môi trường làm việc hiện đại, chuyên nghiệp và thân thiện.
+                                    {data?.content_sec2_3}
                                 </Typography>
                             </Stack>
                         </Grid2>
@@ -158,7 +158,7 @@ export default function Section2(){
                                     fontWeight={600}
                                     color="neutral.cl900"
                                 >
-                                    Nhân sự trẻ
+                                    {data?.title_sec2_4}
                                 </Typography>
 
                                 <Typography
@@ -169,7 +169,7 @@ export default function Section2(){
                                     textAlign={"justify"}
                                     maxWidth={{xs: '100%', lg: 275}}
                                 >
-                                    Làm việc tại công ty thẩm mỹ viện, bạn sẽ có cơ hội phát triển và thăng tiến nhanh chóng.
+                                    {data?.content_sec2_4}
                                 </Typography>
                                 <Box display={{xs: 'none', lg: 'block'}}>
                                 <svg width="48" height="81" viewBox="0 0 48 81" fill="none" xmlns="http://www.w3.org/2000/svg">

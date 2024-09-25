@@ -6,7 +6,7 @@ export default function HeadingHomePage({
     justifyContent="flex-start",
     alignItem="flex-start",
     subTitle="Giới thiệu",
-    title="Doanh nghiệp trẻ "
+    title="Doanh nghiệp trẻ"
 }){
     return(
         <Stack direction={"column"} justifyContent={justifyContent} alignItems={alignItem} gap={1}>
@@ -20,7 +20,7 @@ export default function HeadingHomePage({
                 direction={"row"}
                 justifyContent={"flex-start"} 
                 alignItems={{xs: 'flex-start', lg: "center"}}
-                spacing={2} 
+                gap={1.5} 
                 zIndex={1}
             >
                 <Box display={{xs: 'none', lg: 'block'}}>

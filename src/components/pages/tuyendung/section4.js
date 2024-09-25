@@ -5,7 +5,7 @@ import { IconArrowRight } from "@tabler/icons-react";
 import theme from "@/config/theme";
 import CallToActionDefault from "@/components/cta/default";
 
-export default function Section4(){
+export default function Section4({data, posts}){
     return(
         <Stack
             direction={"column"} 
@@ -19,7 +19,7 @@ export default function Section4(){
                     <Stack direction={"row"} gap={1} alignItems={"center"}>
                         <Divider light sx={{width: '31px', bgcolor: 'primary.cl900'}} />
                         <Typography variant="body1" fontSize={16} fontWeight={500} color="primary.cl900" textTransform={"uppercase"}>
-                            trở thành người một nhà với GTG
+                            {data?.subtitle_list}
                         </Typography>
                     </Stack>
                     <Stack 
@@ -51,30 +51,20 @@ export default function Section4(){
                             color="neutral.cl900"
                             textAlign={"center"}
                         >
-                            Rất nhiều cơ hội đang chờ bạn
+                            {data?.title_list}
                         </Typography>
                     </Stack>
                 </Stack>
 
                 <Grid2 container spacing={2} mb={3}>
-                    <Grid2 size={{ xs: 12, lg: 6 }}>
-                        <ItemTuyenDung />
-                    </Grid2>
-                    <Grid2 size={{ xs: 12, lg: 6 }}>
-                        <ItemTuyenDung />
-                    </Grid2>
-                    <Grid2 size={{ xs: 12, lg: 6 }}>
-                        <ItemTuyenDung />
-                    </Grid2>
-                    <Grid2 size={{ xs: 12, lg: 6 }}>
-                        <ItemTuyenDung />
-                    </Grid2>
-                    <Grid2 size={{ xs: 12, lg: 6 }}>
-                        <ItemTuyenDung />
-                    </Grid2>
-                    <Grid2 size={{ xs: 12, lg: 6 }}>
-                        <ItemTuyenDung />
-                    </Grid2>
+
+                    {posts?.map(item =>
+
+                        <Grid2 size={{ xs: 12, lg: 6 }} key={item.id}>
+                            <ItemTuyenDung item={item?.attributes}/>
+                        </Grid2>
+                    )}
+                    
                 </Grid2>
 
                 <CallToActionDefault />

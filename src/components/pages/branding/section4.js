@@ -98,7 +98,7 @@ function Item({
     )
 }
 
-export default function SectionThePyo(){
+export default function SectionThePyo({data}){
     return(
         <Box 
             pt={{xs: 4, lg: 8}} 
@@ -119,7 +119,7 @@ export default function SectionThePyo(){
                             letterSpacing={"-1.8px"}
                             color="neutral.cl900"
                         >
-                            Xoá sổ hôi nách - Không còn khoảng cách Ứng dụng công nghệ PYOULTIMATE
+                            {data?.sapo_thepyo}
                         </Typography>
                     </Box>
                 </Container>
@@ -154,7 +154,7 @@ export default function SectionThePyo(){
                             textAlign={"center"}
                             fontFamily={philosopher.style.fontFamily}
                         >
-                            Phòng khám thẩm mỹ The Pyo
+                            {data?.title_thepyo}
                         </Typography>
                         <Typography
                             fontSize={16}
@@ -164,17 +164,19 @@ export default function SectionThePyo(){
                             textAlign={"center"}
                             maxWidth={545}
                         >
-                            Nổi bật với các dịch vụ thẩm mỹ tiên tiến, kết hợp giữa công nghệ hiện đại và tay nghề của các chuyên gia hàng đầu trong lĩnh vực, mang đến giải pháp làm đẹp toàn diện cho khách hàng.
+                            {data?.description_thepyo}
                         </Typography>
                     </Stack>
                     <Grid2 container spacing={3}>
                         <Grid2 size={{xs: 12, lg: 6}}>
-                            <ItemLocation />
+                            <ItemLocation 
+                                address={data?.address1_thepyo}
+                            />
                         </Grid2>
 
                         <Grid2 size={{xs: 12, lg: 6}}>
                             <ItemLocation 
-                                address="75 Phạm Viết Chánh, Ho Chi Minh City, Vietnam"
+                                address={data?.address2_thepyo}
                                 deg={270}
                             />
                         </Grid2>
@@ -190,7 +192,10 @@ export default function SectionThePyo(){
                             position={{xs: 'relative', lg: "absolute"}}
                             top={{xs: 0, lg: 100}}
                         >
-                            <Item />
+                            <Item 
+                                text1={data?.title_sec1_thepyo}
+                                text2={data?.content_sec1_thepyo}
+                            />
                         </Box>
 
                         <Box display={{xs: 'none', lg: 'block'}} position={"absolute"} top={480} width={147} height={147} left={50}>
@@ -218,7 +223,10 @@ export default function SectionThePyo(){
                             top={{xs: 'unset', lg: 420}} 
                             right={{xs: 'unset', lg: 20}}
                         >
-                            <Item text1="NHÂN VIÊN" text2="600+"/>
+                            <Item 
+                                 text1={data?.title_sec2_thepyo}
+                                 text2={data?.content_sec2_thepyo}
+                            />
                         </Box>
                     </Stack>
                 </Container>

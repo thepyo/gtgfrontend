@@ -13,7 +13,7 @@ import 'swiper/css/navigation';
 // import required modules
 import { FreeMode, Navigation, Pagination } from 'swiper/modules';
 
-export default function NewsHomepageSection(){
+export default function NewsHomepageSection({posts, data}){
     return(
         <Box py={8}>
             <Container maxWidth={gtgConfig.maxWidth}>
@@ -21,7 +21,7 @@ export default function NewsHomepageSection(){
                     <Stack direction={"row"} justifyContent={"flex-start"} alignItems={"center"} spacing={1} zIndex={1}>
                         <Divider light sx={{ bgcolor: theme.palette.primary.main, width: 31, height: 1 }} />
                         <Typography variant="body2" fontSize={16} fontWeight={400} color={"primary.main"}>
-                            BÀI VIẾT
+                            {data?.sub_title_news}
                         </Typography>
                     </Stack>
                     <Typography
@@ -33,7 +33,7 @@ export default function NewsHomepageSection(){
                         letterSpacing={"-1px"}
                         color={"neutral.cl900"}
                     >
-                        Tin tức - Sự kiện
+                        {data?.title_news}
                     </Typography>
                 </Stack>
 
@@ -58,12 +58,11 @@ export default function NewsHomepageSection(){
                             },
                         }}
                     >
-                         <SwiperSlide><NewItem /></SwiperSlide>
-                         <SwiperSlide><NewItem /></SwiperSlide>
-                         <SwiperSlide><NewItem /></SwiperSlide>
-                         <SwiperSlide><NewItem /></SwiperSlide>
-                         <SwiperSlide><NewItem /></SwiperSlide>
-                         <SwiperSlide><NewItem /></SwiperSlide>
+                        {posts?.map(item =>
+                            <SwiperSlide key={item.id}>
+                                <NewItem item={item?.attributes}/>
+                            </SwiperSlide>
+                        )}
                     </Swiper>
                 </Box>
             </Container>

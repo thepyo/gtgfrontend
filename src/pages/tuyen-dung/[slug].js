@@ -1,22 +1,23 @@
 import CallToActionDefault from "@/components/cta/default";
-import TuyendungDetailDescription from "@/components/pages/tuyendung/detail/description";
 import TuyendungDetailForm from "@/components/pages/tuyendung/detail/form";
 import TuyendungDetailMeta from "@/components/pages/tuyendung/detail/meta";
-import TuyendungDetailSalary from "@/components/pages/tuyendung/detail/quyenloi";
-import TuyendungDetailRequirement from "@/components/pages/tuyendung/detail/requirement";
 import SidebarTuyendungDetail from "@/components/pages/tuyendung/detail/sidebar";
 import HeroPage from "@/components/ui/hero";
 import { gtgConfig } from "@/config/global";
-import theme from "@/config/theme";
 import { Box, Container, Divider, Grid2, Stack, Typography } from "@mui/material";
-import { IconArrowRight } from "@tabler/icons-react";
+import { NextSeo } from "next-seo";
+import Markdown from "react-markdown";
 
-export default function TuyendungDetailPage(){
+export default function TuyendungDetailPage({post}){
     return(
         <>
+            <NextSeo
+                title={post?.seo?.title || post?.title}
+                description={post?.seo?.description || post?.description}
+            />
             <HeroPage
-                title="Chuyên viên kinh doanh"
-                sapo="Chuyên viên kinh doanh"
+                title={post?.title}
+                sapo={post?.title}
                 thumbnail="/tuyendung-detail.jpg"
                 categories={[{id:1,name: "Tuyển dụng", href:"/tuyen-dung"}]}
             />
@@ -39,13 +40,15 @@ export default function TuyendungDetailPage(){
                                 letterSpacing={"-2.5%"}
                                 mb={4}
                             >
-                                Chuyên viên kinh doanh
+                                {post?.title}
                             </Typography>
-                            <TuyendungDetailMeta />
+                            <TuyendungDetailMeta post={post}/>
                             <Divider light sx={{my:4}} />
-                            <TuyendungDetailDescription />
-                            <TuyendungDetailRequirement />
-                            <TuyendungDetailSalary />
+                            <Box sx={{color: 'neutral.cl900', lineHeight: 1.7}} className="description-content">
+                                <Markdown>
+                                    {post?.content}
+                                </Markdown>
+                            </Box>
                             <TuyendungDetailForm />
                         </Grid2>
                         <Grid2 size={{xs: 12, lg: 5}}>
@@ -59,4 +62,32 @@ export default function TuyendungDetailPage(){
             </Container>
         </>
     )
+}
+
+export async function getStaticProps({ params }) {
+    const slug = params?.slug
+    const res = await fetch(`${process.env.API_URL}/tuyen-dungs?filters[slug][$eq]=${slug}&populate=*`)
+    const data = await res.json()
+
+    return{
+        props: {
+            post: data?.data?.[0]?.attributes
+        },
+        revalidate: gtgConfig.revalidate
+    }
+    
+}
+
+export async function getStaticPaths() {
+    const res = await fetch(`${process.env.API_URL}/tuyen-dungs?pagination[page]=1&pagination[pageSize]=250`)
+    const posts = await res.json()
+   
+    // Get the paths we want to pre-render based on posts
+    const paths = posts?.data?.map((post) => ({
+        params: { 
+            slug: `${post?.attributes?.slug}`
+        },
+    }))
+   
+    return { paths, fallback: 'blocking' }
 }

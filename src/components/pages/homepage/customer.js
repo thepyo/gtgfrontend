@@ -12,53 +12,11 @@ import 'swiper/css/pagination';
 
 // import required modules
 import { FreeMode, Pagination } from 'swiper/modules';
+import Link from "next/link";
+import TestimonialItem from "@/components/testimonial/default";
 
-function Item(){
-    return(
-        <Stack 
-            direction={"column"} 
-            width={400}
-            height={450}
-            p={2}
-            bgcolor={"rgba(243, 244, 246, 1)"}
-            spacing={2}
-            justifyContent={"space-between"}
-        >
-            <Box>
-                <svg width="68" height="54" viewBox="0 0 68 54" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M38.359 54V38.5967C38.359 28.2098 40.8581 19.7115 45.8564 13.1016C50.8547 6.37377 58.2359 2.00656 68 0V13.2787C63.9316 14.223 60.5607 15.9934 57.8872 18.5902C55.3299 21.0689 53.6444 24.0197 52.8308 27.4426H64.5128V54H38.359ZM0 54V38.5967C0 28.2098 2.49915 19.7115 7.49744 13.1016C12.4957 6.37377 19.8769 2.00656 29.641 0V13.2787C25.5726 14.223 22.2017 15.9934 19.5282 18.5902C16.9709 21.0689 15.2855 24.0197 14.4718 27.4426H26.1538V54H0Z" fill="#00AEEF"/>
-                </svg>
-            </Box>
-
-            <Stack direction={"row"} alignItems={"center"} spacing={1}>
-                <IconStarFilled color="rgba(251, 191, 0, 1)" />
-                <IconStarFilled color="rgba(251, 191, 0, 1)" />
-                <IconStarFilled color="rgba(251, 191, 0, 1)" />
-                <IconStarFilled color="rgba(251, 191, 0, 1)" />
-                <IconStarFilled color="rgba(251, 191, 0, 1)" />
-            </Stack>
-
-            <Box flexDirection={1}>
-                <Typography
-                    fontSize={18}
-                    fontWeight={400}
-                    textAlign={"justify"}
-                    color="neutral.cl900"
-                >
-                    Tôi đã có trải nghiệm tuyệt vời tại thẩm mỹ viện GTG. Dịch vụ ở đây không chỉ chuyên nghiệp mà còn rất tận tâm. Tôi rất hài lòng với kết quả làm đẹp sau khi được các chuyên viên tư vấn và chăm sóc kỹ lưỡng
-                </Typography>
-            </Box>
-
-            <Box py={2}>
-                <Typography color="neutral.cl900" fontSize={18} fontWeight={700}>
-                    Chị Lan Anh
-                </Typography>
-            </Box>
-        </Stack>
-    )
-}
-
-export default function CustomerTellingHomePageSection(){
+export default function CustomerTellingHomePageSection({data}){
+    const testimonials = data?.testimonials?.data
     return(
         <Box py={10}>
             <Container maxWidth={gtgConfig.maxWidth}>
@@ -68,7 +26,7 @@ export default function CustomerTellingHomePageSection(){
                             <Stack direction={"row"} justifyContent={"flex-start"} alignItems={"center"} spacing={1} zIndex={1}>
                                 <Divider light sx={{ bgcolor: theme.palette.primary.main, width: 31, height: 1 }} />
                                 <Typography variant="body2" fontSize={16} fontWeight={400} color={"primary.main"}>
-                                    NHẬN XÉT
+                                    {data?.sub_title_testimonial}
                                 </Typography>
                             </Stack>
                             <Typography
@@ -80,19 +38,19 @@ export default function CustomerTellingHomePageSection(){
                                 letterSpacing={"-1px"}
                                 color={"neutral.cl900"}
                             >
-                                Khách hàng nói gì về GTG?
+                                {data?.title_testimonial}
                             </Typography>
                         </Stack>
                     </Grid2>
                     <Grid2 size={{xs:12, lg:6}}>
                         <Stack direction={"column"} justifyContent={"center"} alignItems={"flex-start"} gap={3} height={"100%"}>
                             <Typography variant="body1" fontSize={18} fontWeight={400} color="neutral.cl600">
-                                Khách hàng nói rằng công ty thẩm mỹ viện GTG cung cấp dịch vụ tuyệt vời, nhân viên thân thiện và kết quả làm đẹp ấn tượng.
+                                {data?.description_testimonial}
                             </Typography>
 
-                            <Button variant="contained" size="large" endIcon={<IconArrowRight color="#fff"/>} color="primary">
+                            <Button component={Link} href={data?.link_btn_testimonial} variant="contained" size="large" endIcon={<IconArrowRight color="#fff"/>} color="primary">
                                 <Typography variant="body1" fontSize={16} fontWeight={600} color="#ffffff">
-                                    XEM THÊM
+                                    {data?.label_btn_testimonial}
                                 </Typography>
                             </Button>
                         </Stack>
@@ -111,12 +69,16 @@ export default function CustomerTellingHomePageSection(){
                     modules={[FreeMode, Pagination]}
                     className="slide-customer"
                 >
-                    <SwiperSlide><Item /></SwiperSlide>
-                    <SwiperSlide><Item /></SwiperSlide>
-                    <SwiperSlide><Item /></SwiperSlide>
-                    <SwiperSlide><Item /></SwiperSlide>
-                    <SwiperSlide><Item /></SwiperSlide>
-                    <SwiperSlide><Item /></SwiperSlide>
+                    {testimonials?.map(item => 
+                        <SwiperSlide key={item.id}>
+                            <TestimonialItem 
+                                name={item.attributes?.name}
+                                content={item.attributes?.content}
+                                rating={item.attributes?.rating}
+                            />
+                        </SwiperSlide> 
+                    )}
+                    
                 </Swiper>
             </Box>
         </Box>

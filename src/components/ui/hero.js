@@ -7,7 +7,9 @@ export default function HeroPage({
     thumbnail = '/bg-contact.jpg',
     categories = [],
     title="Liên hệ",
-    sapo="Hãy để đội ngũ tư vấn của GTG hỗ trợ bạn dù ở bất kỳ nơi đâu"
+    sapo="Hãy để đội ngũ tư vấn của GTG hỗ trợ bạn dù ở bất kỳ nơi đâu",
+    sizeTitleXs = 40,
+    sizeTitleLg = 60
 }) {
     return (
         <Box position={"relative"}>
@@ -52,8 +54,8 @@ export default function HeroPage({
                         variant="body2"
                         fontWeight={600}
                         fontSize={{
-                            xs: 40,
-                            lg: 60
+                            xs: sizeTitleXs,
+                            lg: sizeTitleLg
                         }}
                         lineHeight={{
                             xs: 1.2,
@@ -61,6 +63,7 @@ export default function HeroPage({
                         }}
                         color="#fff"
                         letterSpacing={"-2.5%"}
+                        textTransform={"uppercase"}
                     >
                         {sapo}
                     </Typography>

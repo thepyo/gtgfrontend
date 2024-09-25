@@ -4,7 +4,7 @@ import { Box, Container, Stack, Typography } from "@mui/material";
 import { IconArrowRight } from "@tabler/icons-react";
 import Link from "next/link";
 
-export default function CallToActionAboutUs(){
+export default function CallToActionAboutUs({data}){
     return(
         <Box py={{xs: 4, lg: 8}}>
             <Container maxWidth={gtgConfig.maxWidth}>
@@ -19,12 +19,12 @@ export default function CallToActionAboutUs(){
                         letterSpacing={"-1px"}
                         color="neutral.cl900"
                     >
-                        Thẩm Mỹ Viện GTG - đối tác làm đẹp, nâng cao sự tự tin và sức khỏe cho cộng đồng
+                        {data?.title_cta}
                     </Typography>
 
-                    <Stack direction={"row"} component={Link} href="#" alignItems={"center"} spacing={1}>
+                    <Stack direction={"row"} component={Link} href={data?.link_button_cta} alignItems={"center"} spacing={1}>
                         <Typography variant="body1" fontSize={20} fontWeight={500} color="neutral.cl500">
-                            Khám phá thành tích
+                            {data?.label_button_cta}
                         </Typography>
                         <IconArrowRight color={theme.palette.neutral.cl500} />
                     </Stack>

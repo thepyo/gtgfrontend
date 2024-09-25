@@ -5,6 +5,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { IconArrowRight } from "@tabler/icons-react";
 import theme from "@/config/theme";
+import { cutText } from "@/components/ui/cutText";
 
 function Item({
     image="/sv-thumbnail.jpg",
@@ -19,12 +20,12 @@ function Item({
                 width={385}
                 height={400}
                 alt={title}
-                // style={{
-                //     width: '100%',
-                //     height: '400px',
-                //     objectFit: 'cover',
-                //     objectPosition: 'center'
-                // }}
+                style={{
+                    width: '100%',
+                    height: '400px',
+                    objectFit: 'cover',
+                    objectPosition: 'center'
+                }}
             />
             <Stack
                 direction={"column"}
@@ -36,14 +37,15 @@ function Item({
                 width={275}
                 height={190}
                 bgcolor={"#fff"}
+                justifyContent={"space-between"}
             >
                 <Typography variant="h3" component={"h3"} fontSize={30} fontWeight={600} lineHeight={1.2} color="neutral.cl900">
                     {title}
                 </Typography>
-                <Typography variant="body2" fontSize={16} fontWeight={400} lineHeight={1.5} color="neutral.cl600">
+                <Typography flexGrow={1} variant="body1" fontSize={16} fontWeight={400} lineHeight={1.5} color="neutral.cl600">
                     {description}
                 </Typography>
-                <Box pt={2}>
+                <Box>
                     <Stack direction={"row"} alignItems={"center"} spacing={1} component={Link} href={link}>
                         <Typography variant="body2" fontSize={15} fontWeight={600} color="primary.main">
                             XEM CHI TIẾT
@@ -57,37 +59,32 @@ function Item({
 }
 
 
-export default function ServiceHomePageSection(){
+export default function ServiceHomePageSection({data}){
+
+    const services = data?.services?.data
+
     return(
         <Box py={5}>
             <Container maxWidth={gtgConfig.maxWidth}>
                 <HeadingHomePage 
-                    subTitle="Dịch vụ"
-                    title="Các lĩnh vực hoạt động"
+                    subTitle={data?.sub_title_service}
+                    title={data?.title_service}
                 />
                 <Typography variant="body1" fontSize={20} fontWeight={400} lineHeight={1.5} textAlign={"justify"} color="neutral.cl500" my={3}>
-                    Chúng tôi luôn đặt sự hài lòng của khách hàng lên hàng đầu và nỗ lực không ngừng để trở thành điểm đến tin cậy cho mọi nhu cầu làm đẹp. Hãy đến với chúng tôi để trải nghiệm sự khác biệt!
+                    {data?.description_service}
                 </Typography>
                 <Grid2 container spacing={3}>
-                    <Grid2 size={{xs:12, lg: 4}}>
-                        <Item title="Dịch vụ 1"/>
-                    </Grid2>
+                    {services?.map(item =>
+                        <Grid2 size={{xs:12, lg: 4}} key={item.id}>
+                            <Item 
+                                title={item?.attributes?.title}
+                                description={cutText(item?.attributes?.description, 90)}
+                                image={item?.thumbnail?.data?.attributes?.url && gtgConfig?.cdnDomain + item?.thumbnail?.data?.attributes?.url}
+                                link={`/dich-vu/${item?.attributes?.slug}`}
+                            />
+                        </Grid2>
+                    )}
 
-                    <Grid2 size={{xs:12, lg: 4}}>
-                        <Item title="Dịch vụ 2"/>
-                    </Grid2>
-                    <Grid2 size={{xs:12, lg: 4}}>
-                        <Item title="Dịch vụ 3"/>
-                    </Grid2>
-                    <Grid2 size={{xs:12, lg: 4}}>
-                        <Item title="Dịch vụ 4"/>
-                    </Grid2>
-                    <Grid2 size={{xs:12, lg: 4}}>
-                        <Item title="Dịch vụ 5"/>
-                    </Grid2>
-                    <Grid2 size={{xs:12, lg: 4}}>
-                        <Item title="Dịch vụ 6"/>
-                    </Grid2>
                 </Grid2>
             </Container>
         </Box>

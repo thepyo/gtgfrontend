@@ -59,7 +59,7 @@ function Item({
 }
 
 
-export default function AboutBranding() {
+export default function AboutBranding({data}) {
     return (
         <Stack py={{ xs: 4, lg: 10 }}>
             <Container maxWidth={gtgConfig.maxWidth}>
@@ -76,32 +76,22 @@ export default function AboutBranding() {
                         }}
                         maxWidth={700}
                     >
-                        Tập đoàn GTG là một hệ thống hàng đầu trong lĩnh vực chăm sóc sắc đẹp và sức khỏe, bao gồm ba thương hiệu nổi tiếng. Mỗi thương hiệu mang đến các dịch vụ và sản phẩm chất lượng cao, phục vụ nhu cầu đa dạng của khách hàng.
+                        {data?.sapo}
                     </Typography>
                 </Stack>
 
                 <Grid2 container spacing={5}>
-                    <Grid2 size={{ xs: 12, lg: 4 }}>
-                        <Item 
-                            number = "01"
-                            text1="Phòng khám thẩm mỹ y khoa"
-                            text2="Dr - Tiến"
-                        />
-                    </Grid2>
-                    <Grid2 size={{ xs: 12, lg: 4 }}>
-                        <Item 
-                            number = "02"
-                            text1="Phòng khám thẩm mỹ"
-                            text2="The Pyo"
-                        />
-                    </Grid2>
-                    <Grid2 size={{ xs: 12, lg: 4 }}>
-                        <Item 
-                            number = "03"
-                            text1="Công ty mỹ phẩm"
-                            text2="Laurent"
-                        />
-                    </Grid2>
+                    {data?.company && data?.company?.map(item =>
+                        <Grid2 size={{ xs: 12, lg: 4 }} key={item.id}>
+                            <Item 
+                                image={gtgConfig.cdnDomain + item?.thumbnail?.data?.attributes?.url}
+                                number = {item.num}
+                                text1={item.text1}
+                                text2={item.text2}
+                            />
+                        </Grid2>
+
+                    )}
                 </Grid2>
             </Container>
         </Stack>

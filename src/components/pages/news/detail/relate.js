@@ -2,7 +2,18 @@ import { Box, Grid2, Stack, Typography } from "@mui/material";
 import Image from "next/image";
 import NewItem from "../item";
 
-export default function RelatePost(){
+// Import Swiper React components
+import { Swiper, SwiperSlide } from 'swiper/react';
+
+// Import Swiper styles
+import 'swiper/css';
+import 'swiper/css/pagination';
+import 'swiper/css/navigation';
+
+// import required modules
+import { FreeMode, Navigation, Pagination } from 'swiper/modules';
+
+export default function RelatePost({posts}){
     return(
         <Stack direction={"column"} spacing={2} mt={5}>
             <Stack direction="row" alignItems={"center"} spacing={1}>
@@ -17,13 +28,34 @@ export default function RelatePost(){
                 </Typography>
             </Stack>
 
-            <Grid2 container spacing={2}>
-                {Array.from([1,2,3]).map((item,key) =>
-                    <Grid2 size={{ xs: 12, lg: 4 }} key={key}>
-                        <NewItem />
-                    </Grid2>
-                )}
-            </Grid2>
+            <Box py={4}>
+                <Swiper
+                    slidesPerView={3}
+                    spaceBetween={30}
+                    freeMode={true}
+                    pagination={{
+                        clickable: true,
+                    }}
+                    navigation={true}
+                    modules={[FreeMode, Pagination, Navigation]}
+                    className="slide-news"
+                    breakpoints={{
+                        0: {
+                            slidesPerView: 1,
+                        },
+                        1200: {
+                            // width: 768,
+                            slidesPerView: 3,
+                        },
+                    }}
+                >
+                    {posts?.map(item =>
+                        <SwiperSlide key={item.id}>
+                            <NewItem item={item?.attributes}/>
+                        </SwiperSlide>
+                    )}
+                </Swiper>
+            </Box>
 
         </Stack>
     )

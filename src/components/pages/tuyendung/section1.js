@@ -2,8 +2,9 @@ import { gtgConfig } from "@/config/global";
 import { Box, Button, Container, Dialog, Grid2, Stack, Typography, useMediaQuery } from "@mui/material";
 import Image from "next/image";
 import { useState } from "react";
+import Markdown from "react-markdown";
 
-export default function Section1() {
+export default function Section1({data}) {
 
     const [open, setOpen] = useState(false);
 
@@ -91,27 +92,14 @@ export default function Section1() {
                                 letterSpacing={"-0.25%"}
                                 color="primary.main"
                             >
-                                Chào mừng bạn đến với GTG
+                                {data?.title_sec_1}
                             </Typography>
                             <Stack direction={"column"} spacing={1} color="neutral.cl900">
-                                <Typography
-                                    variant="body1"
-                                    fontSize={16}
-                                    fontWeight={400}
-                                    textAlign={"justify"}
-                                    color="inherit"
-                                >
-                                    Chúng tôi là đơn vị dẫn đầu trong lĩnh vực cung cấp giải pháp quản lý và bán hàng đa kênh cho các nhà bán hàng tại Việt Nam. Với sứ mệnh Làm cho việc bán hàng dễ dàng hơn, chúng tôi đã thành công phát triển những sản phẩm mang tính đột phá, giúp các khách hàng của mình tăng trưởng toàn diện.
-                                </Typography>
-                                <Typography
-                                    variant="body1"
-                                    fontSize={16}
-                                    fontWeight={400}
-                                    textAlign={"justify"}
-                                    color="inherit"
-                                >
-                                    Sở hữu nền tảng công nghệ vững vàng, tôn chỉ kinh doanh nhất quán, chúng tôi luôn sẵn sàng chào đón những cộng sự chất lượng, cùng nhau đồng hành, cùng nhau phát triển, cùng nhau chạm tay đến những mục tiêu lớn lao!
-                                </Typography>
+                                <Box color="neutral.cl900" sx={{lineHeight: 1.7}}>
+                                    <Markdown>
+                                        {data?.description_sec1}
+                                    </Markdown>
+                                </Box>
                             </Stack>
 
                         </Stack>

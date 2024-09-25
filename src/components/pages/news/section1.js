@@ -1,15 +1,21 @@
+import { gtgConfig } from "@/config/global";
 import { Box, Button, Grid2, Stack, Typography, useMediaQuery } from "@mui/material";
 import { IconCalendarWeek, IconEye, IconStarFilled } from "@tabler/icons-react";
 import Image from "next/image";
 import Link from "next/link";
 
-function ReadDayItem(){
+function ReadDayItem({
+    link = "/",
+    thumbnail = "/readday.jpg",
+    title="",
+    fakeView=9038
+}){
     return(
         <Stack direction={"row"} alignItems={"center"} spacing={2}>
-            <Box className="hover-img" component={Link} href="/tin-tuc/hoi-thao-lam-dep-cham-soc-da">
+            <Box className="hover-img" component={Link} href={link}>
                 <figure>
                     <Image
-                        src="/readday.jpg"
+                        src={thumbnail}
                         width={140}
                         height={90}
                         alt=""
@@ -17,19 +23,19 @@ function ReadDayItem(){
                 </figure>
             </Box>
             <Stack direction={"column"} spacing={1}>
-                <Link href="/tin-tuc/hoi-thao-lam-dep-cham-soc-da">
+                <Link href={link}>
                     <Typography
                         fontWeight={600}
                         fontSize={16}
                         color="neutral.cl900"
                     >
-                        Lorem ipsum dolor sit amet consectetur. Leo.
+                        {title}
                     </Typography>
                 </Link>
                 <Stack direction={"row"} spacing={1} alignItems={"center"}>
                     <IconEye stroke={1} color="#888" size={19}/>
                     <Typography variant="body2" fontSize={14} fontWeight={400} color="neutral.cl500">
-                        9038 lượt xem
+                        {fakeView} lượt xem
                     </Typography>
                 </Stack>
             </Stack>
@@ -37,19 +43,23 @@ function ReadDayItem(){
     )
 }
 
-export default function NewsSection1(){
+export default function NewsSection1({config}){
 
     const math = useMediaQuery('(max-width:700px)');
+
+    const feature = config.feature_post.data.attributes
+
+    const read_today = config.read_today.data
 
     return(
         <Grid2 container spacing={5}>
             <Grid2 size={{xs: 12, lg: 8}}>
                 <Stack direction={"column"} spacing={3}>
                     <Box position={"relative"}>
-                        <Box className="hover-img" component={Link} href="/tin-tuc/hoi-thao-lam-dep-cham-soc-da">
+                        <Box className="hover-img" component={Link} href={`/tin-tuc/${feature?.slug}`}>
                             <figure>
                                 <Image
-                                    src="/news.jpg"
+                                    src={gtgConfig.cdnDomain + feature.thumbnail.data.attributes.url}
                                     width={792}
                                     height={375}
                                     alt="news"
@@ -69,7 +79,7 @@ export default function NewsSection1(){
                         >
                             <Button variant="contained" sx={{borderRadius: 3}}>
                                 <Typography variant="body2" color="#fff" textTransform={"capitalize"}>
-                                    Hội thảo làm đẹp
+                                    Sự kiện
                                 </Typography>
                             </Button>
                         </Box>
@@ -86,11 +96,11 @@ export default function NewsSection1(){
                             <Stack direction={"row"} spacing={1} alignItems={"center"}>
                                 <IconEye stroke={1} color="#888" size={19}/>
                                 <Typography variant="body2" fontSize={16} fontWeight={400} color="neutral.cl500">
-                                    9038 lượt xem
+                                    {feature.fake_view} lượt xem
                                 </Typography>
                             </Stack>
                         </Stack>
-                        <Link href="/tin-tuc/hoi-thao-lam-dep-cham-soc-da">
+                        <Link href={`/tin-tuc/${feature?.slug}`}>
                             <Typography
                                 fontWeight={700}
                                 fontSize={24}
@@ -100,7 +110,7 @@ export default function NewsSection1(){
                                 mb={1}
                                 mt={1.5}
                             >
-                                Hội thảo làm đẹp & chăm sóc da
+                                {feature.title}
                             </Typography>
                         </Link>
                         <Typography
@@ -109,7 +119,7 @@ export default function NewsSection1(){
                             fontWeight={400}
                             color="neutral.cl500"
                         >
-                            Công ty tổ chức hội thảo chuyên đề về chăm sóc da và xu hướng làm đẹp hiện đại, với sự ...
+                            {feature.description}
                         </Typography>
                     </Box>
                 </Stack>
@@ -130,10 +140,19 @@ export default function NewsSection1(){
                             ĐỌC GÌ HÔM NAY
                         </Typography>
                     </Stack>
-                    <ReadDayItem />
-                    <ReadDayItem />
-                    <ReadDayItem />
-                    <ReadDayItem />
+
+                    {read_today && read_today?.map(item =>
+
+                        <ReadDayItem 
+                            key={item.id}
+                            title={item?.attributes?.title}
+                            fakeView={item?.attributes?.fake_view}
+                            thumbnail={gtgConfig.cdnDomain + item?.attributes?.thumbnail?.data?.attributes?.url}
+                            link={`/tin-tuc/${item?.attributes?.slug}`}
+                        />
+
+                    )}
+                    
                 </Stack>
             </Grid2>
         </Grid2>

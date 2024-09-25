@@ -1,8 +1,28 @@
 import theme from "@/config/theme";
-import { Box, Divider, Stack, Typography } from "@mui/material";
+import { Box, Divider, NoSsr, Stack, Typography } from "@mui/material";
+import { useEffect, useState } from "react";
 
 export default function TOC(){
+
+    const [toc,setToc] = useState([])
+
+    function getToc(){
+        setToc([])
+        const allHeading2 = document.querySelectorAll(".post-content h2")
+        allHeading2.forEach((el,index) => {
+            setToc(preToc => [
+                ...preToc,
+                {id: index + 1, text: el.innerText}
+            ])
+        })
+    }
+
+    useEffect(()=>{
+        return () => getToc()
+    },[])
+
     return(
+        
         <Stack direction={"column"} spacing={2} position={"sticky"} top={10}>
             <Typography
                 variant="h2"
@@ -27,26 +47,14 @@ export default function TOC(){
                 }}
             >
                 <ol>
-                    <li>
-                        <a href="#heading1">
-                            Các chuyên đề chăm sóc da
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#heading2">
-                            Chia sẻ kinh nghiệm từ chuyên gia
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#heading3">
-                        Trải Nghiệm Thực Tế
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#heading4">
-                            Chương trình ưu đãi đặc biệt
-                        </a>
-                    </li>
+                    {toc?.map(item =>
+                        <li key={item?.id}>
+                            <a href={`#heading${item.id}`}>
+                                {item?.text}
+                            </a>
+                        </li>
+                    )}
+                    
                 </ol>
             </Box>
         </Stack>

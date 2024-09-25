@@ -3,8 +3,13 @@ import { Box, Button, Container, Grid2, Stack, Typography } from "@mui/material"
 import Image from "next/image";
 import HeadingHomePage from "./heading";
 import { IconArrowRight } from "@tabler/icons-react";
+import Markdown from "react-markdown";
+import Link from "next/link";
 
-export default function YoungBussinessHomePageSection(){
+export default function YoungBussinessHomePageSection({data}){
+
+    const thumbnail = data?.thumbnail_section_2?.data?.attributes?.url ? gtgConfig.cdnDomain + data?.thumbnail_section_2?.data?.attributes?.url : "/young-bussiness.jpg"
+
     return(
         <Box py={10}>
             <Container maxWidth={gtgConfig.maxWidth}>
@@ -12,7 +17,7 @@ export default function YoungBussinessHomePageSection(){
                     <Grid2 size={{xs:12, lg: 5}}>
                         <Stack direction={"row"} justifyContent={"center"} alignItems={"center"} height={"100%"}>
                             <Image
-                                src={"/young-bussiness.jpg"}
+                                src={thumbnail}
                                 width={475}
                                 height={523}
                                 alt=""
@@ -27,7 +32,10 @@ export default function YoungBussinessHomePageSection(){
                     </Grid2>
                     <Grid2 size={{xs:12, lg: 7}}>
                         <Stack direction={"column"} spacing={2}>
-                            <HeadingHomePage />
+                            <HeadingHomePage 
+                                subTitle={data?.sub_title_section_2}
+                                title={data?.title_section_2}
+                            />
                             <Box 
                                 className="description"
                                 sx={{
@@ -45,16 +53,17 @@ export default function YoungBussinessHomePageSection(){
                                     }
                                 }}
                             >
-                                <p>
-                                    Chúng tôi là một thẩm mỹ viện trẻ, năng động và sáng tạo, chuyên cung cấp dịch vụ làm đẹp toàn diện cho khách hàng. Với đội ngũ chuyên viên giàu kinh nghiệm và nhiệt huyết, chúng tôi cam kết mang đến những giải pháp làm đẹp an toàn, hiệu quả và phù hợp với từng nhu cầu riêng biệt. Tại thẩm mỹ viện của chúng tôi, khách hàng không chỉ được trải nghiệm các dịch vụ chăm sóc sắc đẹp hiện đại như phun xăm thẩm mỹ, điều trị da, mà còn được tư vấn tận tình về cách duy trì vẻ đẹp tự nhiên.
-                                </p>
-                                <p>
-                                    Chúng tôi luôn đặt sự hài lòng của khách hàng lên hàng đầu và nỗ lực không ngừng để trở thành điểm đến tin cậy cho mọi nhu cầu làm đẹp. Hãy đến với chúng tôi để trải nghiệm sự khác biệt!
-                                </p> 
+                               <Markdown>{data?.content_section_2}</Markdown>
                             </Box>
                             <Box>
-                                <Button variant="contained" endIcon={<IconArrowRight color="#fff"/>} size="large">
-                                    <Typography color="#fff" fontWeight={600}>Xem thêm</Typography>
+                                <Button 
+                                    variant="contained" 
+                                    endIcon={<IconArrowRight color="#fff"/>} 
+                                    size="large"
+                                    component={Link}
+                                    href={data?.link_btn_section_2 || "/"}
+                                >
+                                    <Typography color="#fff" fontWeight={600}>{data?.label_btn_section_2}</Typography>
                                 </Button>
                             </Box>
                         </Stack>
