@@ -1,5 +1,5 @@
 export const gtgConfig = {
     maxWidth: 'lg',
-    cdnDomain: 'http://localhost:1338',
+    cdnDomain: 'https://gtgadmin.jgoteam.com',
     revalidate: 3000
 }
