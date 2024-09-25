@@ -26,7 +26,7 @@ export default function Index({posts,homepage}) {
           siteName: "GTG Group",
         }}
       />
-      {/* <SlideHomePageDefault /> */}
+      <SlideHomePageDefault />
       <SectionAboutHomePage data={homepage}/>
       <YoungBussinessHomePageSection data={homepage}/>
       <ServiceHomePageSection data={homepage}/>
