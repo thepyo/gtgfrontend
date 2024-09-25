@@ -120,7 +120,7 @@ export async function getStaticProps({ params }) {
 }
 
 export async function getStaticPaths() {
-    const res = await fetch(`${process.env.API_URL}/services?pagination[page]=1&pagination[pageSize]=250`)
+    const res = await fetch(`${process.env.API_URL}/teams?pagination[page]=1&pagination[pageSize]=250`)
     const posts = await res.json()
    
     // Get the paths we want to pre-render based on posts

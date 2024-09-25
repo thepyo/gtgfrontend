@@ -9,6 +9,7 @@ import CustomerTellingHomePageSection from '@/components/pages/homepage/customer
 import NewsHomepageSection from '@/components/pages/homepage/news';
 import { Container } from '@mui/material';
 import CallToActionDefault from '@/components/cta/default';
+import SlideHomePageDefault from '@/components/pages/homepage/slide';
 
 export default function Index({posts,homepage}) {
   return (
